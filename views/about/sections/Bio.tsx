@@ -9,7 +9,7 @@ export function Bio() {
       <div className="container grid gap-10 py-10 sm:py-16 md:grid-cols-[0.85fr_1.15fr] md:gap-16">
 
         <figure className="min-w-0">
-          <Image src="/img/solomon.jpg" alt={PROFILE.name} width={480} height={480} className="aspect-3/4 w-full border border-line object-cover" />
+          <Image src="/img/solomon.jpeg" alt={PROFILE.name} width={480} height={480} className="aspect-3/4 w-full border border-line object-cover" />
           <figcaption className="mt-3 font-mono text-xs text-muted-foreground">
             {PROFILE.name} · {PROFILE.location}
           </figcaption>

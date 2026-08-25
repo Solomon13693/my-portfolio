@@ -1,6 +1,6 @@
 import { Mail, Phone, MapPin, Clock } from 'lucide-react'
-import { BioRow, LiveClock, SocialLinks } from '@/components'
-import { PROFILE } from '@/data'
+import { BioRow, LiveClock } from '@/components'
+import { PROFILE, SOCIALS } from '@/data'
 
 export function Details() {
   return (
@@ -33,7 +33,13 @@ export function Details() {
         </BioRow>
       </div>
 
-      <SocialLinks className="mt-10" />
+      <div className="mt-10 flex items-center gap-3">
+        {SOCIALS.map(({ label, href, Icon }) => (
+          <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label} className="flex size-9 items-center justify-center rounded-md border border-line text-muted-foreground transition-colors hover:border-foreground/30 hover:text-foreground">
+            <Icon />
+          </a>
+        ))}
+      </div>
     </div>
   )
 }

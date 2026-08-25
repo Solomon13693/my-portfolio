@@ -11,23 +11,13 @@ export interface EducationEntry {
 
 export const EDUCATION: EducationEntry[] = [
   {
-    institution: 'Ogun State Institute of Technology',
-    program: 'National Diploma — Computer Science',
-    period: 'Sep 2022 – Oct 2024',
+    institution: 'Ogun State Institute of Technology (OGITECH)',
+    program: 'Higher National Diploma (HND) — Software & Web Development',
+    period: '2025 – Present',
   },
   {
-    institution: 'Devahray',
-    program: 'PHP Master Class',
-    period: '2022',
+    institution: 'Ogun State Institute of Technology (OGITECH)',
+    program: 'National Diploma (ND) — Computer Science',
+    period: '2022 – 2024',
   },
-  {
-    institution: 'Kyel House Intern Program',
-    program: 'Web Designing / Web Development',
-    period: '2021',
-  },
-  {
-    institution: 'Mentis Design Academy',
-    program: 'Graphic Design',
-    period: '2020',
-  },
-]
+];

@@ -1,6 +1,8 @@
-import { Code2, MapPin, Clock, Phone, Mail, Link as LinkIcon, GitBranch } from 'lucide-react'
+import { Code2, MapPin, Clock, Phone, Mail } from 'lucide-react'
 import { BioRow, LiveClock } from '@/components'
 import { PROFILE } from '@/data'
+import { SiGithub } from 'react-icons/si'
+import { FaLinkedin } from 'react-icons/fa6'
 
 export function Overview() {
   return (
@@ -36,13 +38,13 @@ export function Overview() {
           </a>
         </BioRow>
 
-        <BioRow icon={<LinkIcon />}>
+        <BioRow icon={<FaLinkedin />}>
           <a className="hover:text-foreground" target="_blank" rel="noopener noreferrer" href={PROFILE.linkedin}>
             LinkedIn
           </a>
         </BioRow>
 
-        <BioRow icon={<GitBranch />}>
+        <BioRow icon={<SiGithub />}>
           <a className="hover:text-foreground" target="_blank" rel="noopener noreferrer" href={PROFILE.github}>
             GitHub
           </a>

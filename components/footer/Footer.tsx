@@ -10,7 +10,6 @@ export function Footer() {
       <div className="container flex flex-col items-center gap-6 py-10 text-center sm:flex-row sm:justify-between sm:text-left">
 
         <div className="flex flex-col items-center gap-2 sm:items-start">
-          <Logo className="text-lg sm:text-lg md:text-xl" />
           <p className="font-mono text-xs tracking-wider text-muted-foreground uppercase">
             © {year} {PROFILE.name} · {PROFILE.location}
           </p>

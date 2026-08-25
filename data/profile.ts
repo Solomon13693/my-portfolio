@@ -1,3 +1,6 @@
+import { SiGithub, SiInstagram } from 'react-icons/si'
+import { FaLinkedin } from 'react-icons/fa6'
+
 export const PROFILE = {
   name: 'Solomon Adeoye',
   tagline: 'Software Developer.',
@@ -17,16 +20,17 @@ export const SOCIALS = [
   {
     label: 'LinkedIn',
     href: PROFILE.linkedin,
-    Icon: require('lucide-react').Linkedin,
+    Icon: FaLinkedin,
   },
   {
     label: 'GitHub',
     href: PROFILE.github,
-    Icon: require('lucide-react').Github,
+    Icon: SiGithub,
   },
   {
     label: 'Instagram',
     href: PROFILE.instagram,
-    Icon: require('lucide-react').Instagram,
+    Icon: SiInstagram,
   },
 ] as const
+

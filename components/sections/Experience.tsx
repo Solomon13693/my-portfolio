@@ -75,8 +75,7 @@ function PositionAccordion({ position, showRail }: { position: ExperiencePositio
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.35, ease: EASE_OUT }}
-            className="overflow-hidden"
-          >
+            className="overflow-hidden" >
             <div className="pt-2 pl-9">
               <p className="max-w-2xl text-sm text-muted-foreground">{position.summary}</p>
 

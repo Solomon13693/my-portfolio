@@ -11,7 +11,7 @@ export function Education() {
         <p className="font-mono text-xs tracking-wider text-muted-foreground uppercase">Education</p>
         <div className="mt-3 h-px w-10 bg-foreground" aria-hidden="true" />
 
-        <div className="mt-10 sm:mt-16">
+        <div className="mt-8 sm:mt-10">
           {EDUCATION.map((entry, index) => (
             <Reveal key={`${entry.institution}-${entry.program}`} delay={index * 0.08} y={16}>
               <div

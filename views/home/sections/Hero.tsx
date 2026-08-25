@@ -7,7 +7,7 @@ export function Hero() {
 
       <div className="container flex items-center gap-4 py-6 sm:py-10">
 
-        <Image src="/img/solomon.jpg" alt={PROFILE.name} width={112} height={112} priority className="size-16 shrink-0 rounded-full object-cover sm:size-28"
+        <Image src="/img/solomon.jpeg" alt={PROFILE.name} width={112} height={112} priority className="size-16 shrink-0 rounded-full object-cover sm:size-28"
         />
 
         <div>

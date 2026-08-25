@@ -1,4 +1,4 @@
-import { ServicesGrid, Experience, Education, TechStack, Reveal } from '@/components'
+import { ServicesGrid, Experience, Education, Certifications, TechStack, Reveal } from '@/components'
 import { Intro, Bio } from './sections'
 
 export function AboutView() {
@@ -19,6 +19,10 @@ export function AboutView() {
 
       <Reveal>
         <Education />
+      </Reveal>
+
+      <Reveal>
+        <Certifications />
       </Reveal>
 
       <Reveal>

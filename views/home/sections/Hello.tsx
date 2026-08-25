@@ -1,3 +1,7 @@
+import Link from 'next/link'
+import { ArrowRight } from 'lucide-react'
+import { ROUTES } from '@/constants'
+
 export function Hello() {
   return (
     <div className="border-b border-line">
@@ -28,6 +32,11 @@ export function Hello() {
           isn&apos;t the finish line. Good software should be something that can grow,
           be maintained, and continue delivering value long after launch.
         </p>
+
+        <Link href={ROUTES.about} className="group inline-flex items-center gap-2 font-mono text-xs tracking-wider text-muted-foreground uppercase transition-colors hover:text-foreground">
+          Read more
+          <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+        </Link>
 
       </div>
 

@@ -1,6 +1,7 @@
 export * from './profile'
 export * from './experience'
 export * from './education'
+export * from './certifications'
 export * from './about'
 export * from './services'
 export * from './projects'
