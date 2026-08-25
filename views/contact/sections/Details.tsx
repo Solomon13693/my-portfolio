@@ -1,5 +1,5 @@
 import { Mail, Phone, MapPin, Clock } from 'lucide-react'
-import { BioRow, LiveClock } from '@/components'
+import { BioRow, LiveClock } from '@/components/reusable'
 import { PROFILE, SOCIALS } from '@/data'
 
 export function Details() {

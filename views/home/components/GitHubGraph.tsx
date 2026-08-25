@@ -103,7 +103,8 @@ export function GitHubGraph({ data }: { data: GitHubContributionsResponse }) {
           className="h-auto w-full"
           style={{ minWidth: width }}
           role="img"
-          aria-label="GitHub contributions graph">
+          aria-labelledby="github-graph-title">
+          <title id="github-graph-title">GitHub contributions graph</title>
           <g className="fill-muted-foreground" fontSize="10">
             {monthLabels.map((m) => (
               <text key={m.x} x={m.x} y={12}>
@@ -127,7 +128,6 @@ export function GitHubGraph({ data }: { data: GitHubContributionsResponse }) {
                   rx={2}
                   ry={2}
                   fill={LEVEL_FILL[day.level] ?? LEVEL_FILL[0]}
-                  aria-label={`${day.count} contribution${day.count === 1 ? '' : 's'} on ${day.date}`}
                   onMouseEnter={(e) => showTooltip(e, day)}
                   onMouseLeave={() => setTooltip(null)}
                   className={cn(

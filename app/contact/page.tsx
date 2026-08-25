@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { ContactView } from '@/views'
+import ContactView from '@/views/contact'
 import { ROUTES, getPageMetadata } from '@/constants'
 
 export const metadata: Metadata = getPageMetadata(ROUTES.contact)

@@ -3,7 +3,8 @@
 import { useState, FormEvent } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { Send } from 'lucide-react'
-import { Input, PhoneInput, TextArea, Button } from '@/components'
+import { Input, PhoneInput, TextArea } from '@/components/ui/form'
+import Button from '@/components/ui/button'
 import { validateContactForm, type ContactFormValues, type ContactFormErrors } from '@/schemas'
 import { EASE_OUT } from '@/lib'
 
@@ -109,7 +110,7 @@ export function ContactForm() {
             radius='none'
           />
 
-          <Button type="submit" loading={status === 'submitting'} className="w-full font-normal mt-4 rounded-none" endContent={<Send className="size-4" />}>
+          <Button type="submit" loading={status === 'submitting'} className="w-full font-normal mt-4 rounded-none" endContent={<Send className="size-4" aria-hidden="true" />}>
             Send message
           </Button>
         </motion.form>

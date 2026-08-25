@@ -1,32 +1,27 @@
 import type { Metadata } from "next";
-import { Geist_Mono } from "next/font/google";
-import Script from "next/script";
-import { EFCircular } from "@/lib";
+import { EFCircular, geistMono, BOOTSTRAP_SCRIPT } from "@/lib";
 import { SiteThemeProvider } from "@/hooks";
 import { Header } from "@/components/nav";
 import { Footer } from "@/components/footer";
-import { LoadingScreen, PageTransition } from "@/components/motion";
+import { BootSplash, LoadingScreen, PageTransition } from "@/components/motion";
 import { ROUTES, getPageMetadata } from "@/constants";
 import "./globals.css";
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = getPageMetadata(ROUTES.home);
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${EFCircular.variable} ${geistMono.variable} h-full antialiased`} suppressHydrationWarning>
-      
-      <body className="min-h-full flex flex-col bg-background text-foreground"
-        suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: BOOTSTRAP_SCRIPT }} />
+      </head>
 
-  
-        <Script id="theme-init" strategy="beforeInteractive">
-          {`try{var t=localStorage.getItem('portfolio-theme');var d=t?t==='dark':window.matchMedia('(prefers-color-scheme: dark)').matches;if(d){document.documentElement.classList.add('dark')}}catch(e){}`}
-        </Script>
+      <body className="min-h-full flex flex-col bg-background text-foreground" suppressHydrationWarning>
+        <noscript>
+          <style>{`html{overflow:auto!important}.boot-splash{display:none!important}`}</style>
+        </noscript>
+
+        <BootSplash />
 
         <SiteThemeProvider>
           <LoadingScreen />
@@ -36,9 +31,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           </main>
           <Footer />
         </SiteThemeProvider>
-
       </body>
-
     </html>
   );
 }

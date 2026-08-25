@@ -1,0 +1,10 @@
+# Solomon Adeoye
+
+> Software developer in Lagos, Nigeria. I build web, mobile, and backend products.
+
+- [Home](https://solomonadeoye.vercel.app/)
+- [About](https://solomonadeoye.vercel.app/about)
+- [Work](https://solomonadeoye.vercel.app/work)
+- [Contact](https://solomonadeoye.vercel.app/contact)
+- [GitHub](https://github.com/solomon13693)
+- [LinkedIn](https://www.linkedin.com/in/adeoye-solomon-094650219/)

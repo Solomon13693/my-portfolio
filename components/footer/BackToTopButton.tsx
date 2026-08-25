@@ -27,7 +27,7 @@ export function BackToTopButton() {
         variants={{ rest: { y: 0 }, hover: { y: -3 } }}
         transition={{ duration: 0.25, ease: EASE_OUT }}
         className="flex">
-        <ArrowUp className="size-4" />
+        <ArrowUp className="size-4" aria-hidden="true" />
       </motion.span>
     </motion.button>
   )

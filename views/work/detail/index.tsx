@@ -1,4 +1,4 @@
-import { Reveal } from '@/components'
+import { Reveal } from '@/components/motion'
 import type { Project, ProjectMediaItem } from '@/data'
 import { Header, ProjectMeta, Media, Overview, CaseStudySections } from './sections'
 
@@ -10,9 +10,7 @@ interface WorkDetailViewProps {
 export function WorkDetailView({ project, media }: WorkDetailViewProps) {
   return (
     <div className="w-full">
-      <Reveal y={0}>
-        <Header project={project} />
-      </Reveal>
+      <Header project={project} />
 
       <Reveal>
         <ProjectMeta project={project} />

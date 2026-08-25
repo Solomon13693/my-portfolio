@@ -1,13 +1,11 @@
-import { ServicesGrid, Experience, Education, Certifications, TechStack, Reveal } from '@/components'
+import { ServicesGrid, Experience, Education, Certifications, TechStack } from '@/components/sections'
+import { Reveal } from '@/components/motion'
 import { Intro, Bio } from './sections'
 
 export function AboutView() {
   return (
     <div className="w-full">
-
-      <Reveal y={0}>
-        <Intro />
-      </Reveal>
+      <Intro />
 
       <Reveal>
         <Bio />
@@ -32,7 +30,6 @@ export function AboutView() {
       <Reveal>
         <ServicesGrid />
       </Reveal>
-
     </div>
   )
 }

@@ -5,9 +5,7 @@ export function ContactView() {
   return (
     <div className="w-full">
 
-      <Reveal y={0}>
-        <Intro />
-      </Reveal>
+      <Intro />
 
       <div className="border-b border-line">
         <div className="container grid gap-12 py-10 sm:py-16 md:grid-cols-[1.15fr_0.85fr] md:gap-16">

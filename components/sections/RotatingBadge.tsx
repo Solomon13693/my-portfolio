@@ -11,7 +11,7 @@ export function RotatingBadge({ text = 'SOLOMON ADEOYE • FULL STACK • ', inv
   return (
     <div aria-hidden="true" className="relative shrink-0" style={{ width: SIZE, height: SIZE }}>
 
-      <svg viewBox={`0 0 ${SIZE} ${SIZE}`} className="absolute inset-0 h-full w-full animate-[spin_16s_linear_infinite]">
+      <svg viewBox={`0 0 ${SIZE} ${SIZE}`} className="absolute inset-0 h-full w-full animate-[spin_16s_linear_infinite]" aria-hidden="true">
 
         <defs>
           <path

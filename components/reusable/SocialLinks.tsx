@@ -26,7 +26,7 @@ export function SocialLinks({ className }: { className?: string }) {
           whileTap={{ scale: 0.9 }}
           transition={{ duration: 0.2, ease: EASE_OUT }}
           className="flex size-9 items-center justify-center rounded-md border border-line text-muted-foreground transition-colors hover:border-foreground/30 hover:text-foreground">
-          <Icon className="size-4" />
+          <Icon className="size-4" aria-hidden="true" />
         </motion.a>
       ))}
     </div>

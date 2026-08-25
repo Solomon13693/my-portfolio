@@ -1,11 +1,5 @@
-'use client'
-
-import { useRef, type ReactNode } from 'react'
-import { useGSAP } from '@gsap/react'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-
-gsap.registerPlugin(ScrollTrigger)
+import type { CSSProperties, ReactNode } from 'react'
+import { cn } from '@/lib'
 
 interface RevealProps {
   children: ReactNode
@@ -15,35 +9,10 @@ interface RevealProps {
 }
 
 export function Reveal({ children, delay = 0, y = 32, className }: RevealProps) {
-  const ref = useRef<HTMLDivElement>(null)
-
-  useGSAP(
-    () => {
-      if (!ref.current) return
-
-      gsap.fromTo(
-        ref.current,
-        { autoAlpha: 0, y },
-        {
-          autoAlpha: 1,
-          y: 0,
-          duration: 0.9,
-          delay,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: ref.current,
-            start: 'top 85%',
-            toggleActions: 'play none none none',
-            once: true,
-          },
-        }
-      )
-    },
-    { scope: ref }
-  )
+  const style: CSSProperties | undefined = delay ? { animationDelay: `${delay}s` } : undefined
 
   return (
-    <div ref={ref} className={className}>
+    <div className={cn(y === 0 ? 'reveal-fade' : 'reveal-up', className)} style={style}>
       {children}
     </div>
   )

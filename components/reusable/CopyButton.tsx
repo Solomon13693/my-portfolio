@@ -38,7 +38,7 @@ export function CopyButton({ value, className }: { value: string; className?: st
           transition={{ duration: 0.2, ease: EASE_OUT }}
           className="flex"
         >
-          {copied ? <Check className="size-3.5" /> : <Copy className="size-3.5" />}
+          {copied ? <Check className="size-3.5" aria-hidden="true" /> : <Copy className="size-3.5" aria-hidden="true" />}
         </motion.span>
       </AnimatePresence>
     </motion.button>

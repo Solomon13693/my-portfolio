@@ -1,4 +1,4 @@
-import { PageHeader } from '@/components'
+import { PageHeader } from '@/components/sections'
 import { ABOUT } from '@/data'
 
 export function Intro() {

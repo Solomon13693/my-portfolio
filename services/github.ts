@@ -82,18 +82,24 @@ export const getGitHubContributions = cache(
     const token = process.env.GITHUB_TOKEN
     if (!token) return null
 
-    const res = await fetch('https://api.github.com/graphql', {
-      method: 'POST',
-      headers: {
-        Authorization: `Bearer ${token}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        query: CONTRIBUTIONS_QUERY,
-        variables: { login: username, from: range?.from ?? null, to: range?.to ?? null },
-      }),
-      next: { revalidate: 60 * 60 * 12 },
-    })
+    let res: Response
+    try {
+      res = await fetch('https://api.github.com/graphql', {
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${token}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          query: CONTRIBUTIONS_QUERY,
+          variables: { login: username, from: range?.from ?? null, to: range?.to ?? null },
+        }),
+        signal: AbortSignal.timeout(4000),
+        next: { revalidate: 60 * 60 * 12 },
+      })
+    } catch {
+      return null
+    }
 
     if (!res.ok) return null
 

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { WorkDetailView } from '@/views'
+import WorkDetailView from '@/views/work/detail'
 import { PROJECTS, type ProjectMediaItem } from '@/data'
 import { SITE_NAME, SITE_URL } from '@/constants'
 import { getProjectMedia } from '@/lib/project-media'

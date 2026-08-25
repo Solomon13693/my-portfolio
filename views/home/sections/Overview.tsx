@@ -1,5 +1,5 @@
 import { Code2, MapPin, Clock, Phone, Mail } from 'lucide-react'
-import { BioRow, LiveClock } from '@/components'
+import { BioRow, LiveClock } from '@/components/reusable'
 import { PROFILE } from '@/data'
 import { SiGithub } from 'react-icons/si'
 import { FaLinkedin } from 'react-icons/fa6'

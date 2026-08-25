@@ -1,18 +1,15 @@
-import { ProjectsGrid, Reveal } from '@/components'
+import { ProjectsGrid } from '@/components/sections'
+import { Reveal } from '@/components/motion'
 import { Intro } from './sections'
 
 export function WorkView() {
   return (
     <div className="w-full">
-      
-      <Reveal y={0}>
-        <Intro />
-      </Reveal>
+      <Intro />
 
       <Reveal>
         <ProjectsGrid />
       </Reveal>
-
     </div>
   )
 }

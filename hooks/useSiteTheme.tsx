@@ -1,36 +1,36 @@
 'use client'
 
 import { createContext, useCallback, useContext, useSyncExternalStore, type ReactNode } from 'react'
+import { THEME_STORAGE_KEY } from '@/lib/site-boot'
 
 export type SiteTheme = 'light' | 'dark'
 
-const STORAGE_KEY = 'portfolio-theme'
 const CHANGE_EVENT = 'portfolio-theme-change'
 const SYSTEM_QUERY = '(prefers-color-scheme: dark)'
 
+export function applyThemeClass(theme: SiteTheme) {
+  document.documentElement.classList.toggle('dark', theme === 'dark')
+  document.documentElement.style.colorScheme = theme
+}
 
 function getSnapshot(): SiteTheme {
-  const stored = window.localStorage.getItem(STORAGE_KEY)
+  const stored = window.localStorage.getItem(THEME_STORAGE_KEY)
   if (stored === 'dark' || stored === 'light') return stored
   return window.matchMedia(SYSTEM_QUERY).matches ? 'dark' : 'light'
 }
 
-// Server (and the very first client render, before hydration) has no localStorage —
-// always 'light' here. This is the sanctioned way to read an external store that
-// legitimately differs between server and client without a hydration mismatch;
-// the inline script in RootLayout has already set the real class before paint.
 function getServerSnapshot(): SiteTheme {
   return 'light'
 }
 
 function subscribe(callback: () => void) {
   window.addEventListener(CHANGE_EVENT, callback)
-  
+
   const media = window.matchMedia(SYSTEM_QUERY)
   const onSystemChange = () => {
-    const stored = window.localStorage.getItem(STORAGE_KEY)
+    const stored = window.localStorage.getItem(THEME_STORAGE_KEY)
     if (stored !== 'dark' && stored !== 'light') {
-      document.documentElement.classList.toggle('dark', media.matches)
+      applyThemeClass(media.matches ? 'dark' : 'light')
     }
     callback()
   }
@@ -55,8 +55,8 @@ export function SiteThemeProvider({ children }: { children: ReactNode }) {
 
   const toggleTheme = useCallback(() => {
     const next: SiteTheme = getSnapshot() === 'light' ? 'dark' : 'light'
-    window.localStorage.setItem(STORAGE_KEY, next)
-    document.documentElement.classList.toggle('dark', next === 'dark')
+    window.localStorage.setItem(THEME_STORAGE_KEY, next)
+    applyThemeClass(next)
     window.dispatchEvent(new Event(CHANGE_EVENT))
   }, [])
 
