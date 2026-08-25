@@ -1,5 +1,5 @@
 import { TechStack, Reveal } from '@/components'
-import { IntroBanner, Hero, Overview, Hello, GitHubContributions, Journey } from './sections'
+import { IntroBanner, Hero, Overview, Hello, GitHubContributions } from './sections'
 
 export function HomeView() {
   return (
@@ -23,10 +23,6 @@ export function HomeView() {
 
       <Reveal>
         <GitHubContributions />
-      </Reveal>
-
-      <Reveal>
-        <Journey />
       </Reveal>
 
       <Reveal>

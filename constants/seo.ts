@@ -3,8 +3,8 @@ import { ROUTES } from './routes'
 import { SITE_NAME } from './nav'
 
 function resolveSiteUrl(): string {
-  if (process.env.NEXT_PUBLIC_SITE_URL) {
-    return process.env.NEXT_PUBLIC_SITE_URL.replace(/\/$/, '')
+  if (process.env.SITE_URL) {
+    return process.env.SITE_URL.replace(/\/$/, '')
   }
   if (process.env.VERCEL_PROJECT_PRODUCTION_URL) {
     return `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
@@ -19,8 +19,7 @@ export const SITE_URL = resolveSiteUrl()
 
 export const SEO_TITLE = `${SITE_NAME} — Software Developer`
 
-export const SEO_DESCRIPTION =
-  'Solomon Adeoye is a software developer in Lagos, Nigeria, building with React, Next.js, and Laravel.'
+export const SEO_DESCRIPTION = 'Solomon Adeoye is a software developer in Lagos, Nigeria.'
 
 export interface PageSeo {
   title: string
@@ -32,22 +31,25 @@ export const PAGE_SEO: Record<string, PageSeo> = {
     title: SEO_TITLE,
     description: SEO_DESCRIPTION,
   },
+
   [ROUTES.about]: {
     title: `About — ${SITE_NAME}`,
     description:
-      "I'm Solomon. I build full-stack web products — booking platforms, wallets, and the dashboards behind them.",
+      "I'm Solomon, a software developer who builds modern web and mobile applications, APIs, and digital products.",
   },
+
   [ROUTES.work]: {
     title: `Work — ${SITE_NAME}`,
     description:
-      "A few of the products Solomon has helped build and ship — booking platforms, dashboards, and the APIs behind them.",
+      "Explore software products and applications Solomon has built, contributed to, and shipped across web, mobile, and backend systems.",
   },
+
   [ROUTES.contact]: {
     title: `Contact — ${SITE_NAME}`,
     description:
-      "Get in touch with Solomon Adeoye about a project, a role, or just to say hi.",
+      "Get in touch with Solomon Adeoye about a project, collaboration, software development opportunity, or just to say hi.",
   },
-}
+};
 
 export function getPageMetadata(path: string): Metadata {
 
@@ -55,6 +57,7 @@ export function getPageMetadata(path: string): Metadata {
   const canonical = path === ROUTES.home ? SITE_URL : `${SITE_URL}${path}`
 
   return {
+    metadataBase: new URL(SITE_URL),
     title: { absolute: seo.title },
     description: seo.description,
     alternates: { canonical },

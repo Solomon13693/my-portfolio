@@ -30,7 +30,7 @@ export interface Project {
   stack: string[]
   links: ProjectLink[]
   sections: CaseStudySection[]
-  
+
   youtubeIds?: string[]
 }
 
@@ -49,7 +49,7 @@ export const PROJECTS: Project[] = [
     summary:
       'The core admin dashboard and booking system — real-time availability checks, Google Maps and Calendar integrations, and role-based access control.',
     description:
-      'Engineer and maintain the core admin dashboard and booking system — real-time availability checks, Google Maps and Calendar API integrations, and role-based access control with NextAuth.',
+      'Developer and maintain the core admin dashboard and booking system — real-time availability checks, Google Maps and Calendar API integrations, and role-based access control with NextAuth.',
     stack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Google Maps API', 'Google Calendar API', 'Git'],
     links: [],
     sections: [

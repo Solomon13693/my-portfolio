@@ -8,22 +8,29 @@ export function Hello() {
       </div>
 
       <div className="container space-y-6 py-8 sm:py-12">
+
         <p className="max-w-2xl text-3xl leading-tight font-medium text-balance sm:text-4xl">
-          I&apos;m Solomon. I build software that works — and keeps working after launch.
+          I&apos;m Solomon. I build software that solves real problems and keeps working after launch.
         </p>
 
         <p className="max-w-2xl text-muted-foreground">
-          A Software Developer working where React, Next.js, and Laravel meet. I take a
-          feature from a product requirement to a shipped release, and I stick around after it
-          ships.
+          I&apos;m a Software Developer who builds web and mobile applications, APIs,
+          dashboards, and the systems behind them. I work across React Native, React,
+          Next.js, Laravel, Node.js, and other modern technologies, choosing the right
+          tools for the problem rather than limiting myself to a single stack.
         </p>
 
         <p className="max-w-2xl text-muted-foreground">
-          That&apos;s how I approach every feature: understand what it actually needs to do, work
-          within what the stack can support, and ship something that holds up — not just a demo,
-          but production code that delivers real value and that someone else can build on.
+          I enjoy taking ideas from product requirements to production understanding
+          what needs to be built, designing practical solutions, writing maintainable
+          code, integrating the different pieces of a system, and making sure the final
+          product is reliable, performant, and ready for real users. For me, shipping
+          isn&apos;t the finish line. Good software should be something that can grow,
+          be maintained, and continue delivering value long after launch.
         </p>
+
       </div>
+
     </div>
   )
 }

@@ -113,14 +113,16 @@ export function IntroBanner() {
             </span>
 
             <h2 className="text-4xl leading-[1.2] tracking-tight sm:text-6xl">
-              Full Stack {' '}<span className="text-muted-foreground">Software Engineer.</span>
+              <span className="text-muted-foreground">
+                Software Developer.
+              </span>
             </h2>
 
             <h2 className="mt-3 text-4xl leading-[1.2] tracking-tight sm:mt-4 sm:text-6xl">
-              Frontend, Backend, Mobile app.
+              Frontend, Backend,
             </h2>
 
-            <h2 className="mt-3 text-4xl leading-[1.2] tracking-tight sm:mt-4 sm:text-6xl">&More.</h2>
+            <h2 className="mt-3 text-4xl leading-[1.2] tracking-tight sm:mt-4 sm:text-6xl">Mobile app.</h2>
 
           </div>
 

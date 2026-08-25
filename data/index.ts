@@ -1,5 +1,4 @@
 export * from './profile'
-export * from './journey'
 export * from './experience'
 export * from './education'
 export * from './about'

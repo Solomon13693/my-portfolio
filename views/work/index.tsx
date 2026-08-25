@@ -4,6 +4,7 @@ import { Intro } from './sections'
 export function WorkView() {
   return (
     <div className="w-full">
+      
       <Reveal y={0}>
         <Intro />
       </Reveal>
@@ -11,6 +12,7 @@ export function WorkView() {
       <Reveal>
         <ProjectsGrid />
       </Reveal>
+
     </div>
   )
 }

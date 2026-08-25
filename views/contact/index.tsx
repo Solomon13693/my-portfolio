@@ -4,6 +4,7 @@ import { Intro, ContactForm, Details } from './sections'
 export function ContactView() {
   return (
     <div className="w-full">
+
       <Reveal y={0}>
         <Intro />
       </Reveal>
@@ -18,6 +19,7 @@ export function ContactView() {
           </Reveal>
         </div>
       </div>
+      
     </div>
   )
 }

@@ -23,7 +23,7 @@ export const EXPERIENCE: ExperienceCompany[] = [
         duration: '1y 9m',
         current: true,
         summary:
-          'Engineer and maintain the core admin dashboard and booking system — real-time availability checks, Google Maps and Calendar API integrations, and role-based access control with NextAuth.',
+          'Developer and maintain the core admin dashboard and booking system — real-time availability checks, Google Maps and Calendar API integrations, and role-based access control with NextAuth.',
         tools: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Google Maps API', 'Google Calendar API', 'Git'],
       },
       {

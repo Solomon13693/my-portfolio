@@ -4,10 +4,10 @@ import { ABOUT } from '@/data'
 export function Intro() {
   return (
     <PageHeader
-      eyebrow="About us"
+      eyebrow="About me"
       title="About"
       description={ABOUT.headline}
-      sidebarLabels={['Frontend', 'Backend', 'Full stack']}
+      sidebarLabels={['Frontend', 'Mobile', 'Backend']}
     />
   )
 }

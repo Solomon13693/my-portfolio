@@ -5,8 +5,8 @@ export function Intro() {
     <PageHeader
       eyebrow="Selected work"
       title="Work"
-      description="A few of the products I've helped build and ship."
-      sidebarLabels={['Web apps', 'Dashboards', 'APIs']}
+      description="A selection of software I've built across web, mobile, frontend, backend, and APIs."
+      sidebarLabels={['Web apps', 'Mobile apps', 'Backend']}
     />
   )
 }

@@ -13,14 +13,12 @@ function PositionAccordion({ position, showRail }: { position: ExperiencePositio
   const [open, setOpen] = useState(true)
 
   return (
-    <div className="group relative">
+    <div className="group relative pt-5">
       {showRail && (
         <>
           <div className="absolute top-0 left-3 h-full w-px bg-line" aria-hidden="true" />
-          <div
-            className="pointer-events-none absolute bottom-0 left-3 hidden size-4 bg-background group-last:flex"
-            aria-hidden="true"
-          >
+          <div className="pointer-events-none absolute bottom-0 left-3 hidden size-4 bg-background group-last:flex"
+            aria-hidden="true">
             <span className="size-full -translate-y-2.25 rounded-bl-sm border-b border-l border-line" />
           </div>
         </>
@@ -30,8 +28,7 @@ function PositionAccordion({ position, showRail }: { position: ExperiencePositio
         type="button"
         onClick={() => setOpen((prev) => !prev)}
         aria-expanded={open}
-        className="-mx-2 flex w-full cursor-pointer items-start gap-3 rounded-md px-2 py-2 text-left hover:bg-muted/50"
-      >
+        className="-mx-2 flex w-full cursor-pointer items-start gap-3 rounded-md px-2 py-2 text-left hover:bg-muted/50">
         <IconTile>
           <CodeXml aria-hidden="true" />
         </IconTile>
@@ -42,8 +39,7 @@ function PositionAccordion({ position, showRail }: { position: ExperiencePositio
             <motion.span
               animate={{ rotate: open ? 180 : 0 }}
               transition={{ duration: 0.3, ease: EASE_OUT }}
-              className="mt-0.5 shrink-0 text-muted-foreground"
-            >
+              className="mt-0.5 shrink-0 text-muted-foreground">
               <ChevronDown className="size-4" aria-hidden="true" />
             </motion.span>
           </div>
@@ -106,10 +102,10 @@ export function Experience() {
         <p className="font-mono text-xs tracking-wider text-muted-foreground uppercase">Experience</p>
         <div className="mt-3 h-px w-10 bg-foreground" aria-hidden="true" />
 
-        <div className="mt-10 border-t border-line sm:mt-16">
+        <div className="mt-10 border-t border-line sm:mt-12">
           {EXPERIENCE.map((entry, index) => (
             <Reveal key={entry.company} delay={index * 0.08} y={20}>
-              <div className="border-b border-line py-10">
+              <div className="border-b border-line py-5">
                 <div className="flex items-center gap-3">
                   {entry.logo ? (
                     <Image
@@ -122,15 +118,14 @@ export function Experience() {
                   ) : (
                     <span
                       aria-hidden="true"
-                      className="flex size-6 shrink-0 items-center justify-center rounded-full border border-line bg-muted font-mono text-[0.6rem] text-muted-foreground"
-                    >
+                      className="flex size-6 shrink-0 items-center justify-center rounded-full border border-line bg-muted font-mono text-[0.6rem] text-muted-foreground">
                       {entry.company[0]}
                     </span>
                   )}
                   <h3 className="text-lg font-medium tracking-tight">{entry.company}</h3>
                 </div>
 
-                <div className="mt-4">
+                <div className="mt-0 px-9">
                   {entry.positions.map((position) => (
                     <PositionAccordion key={position.title} position={position} showRail={entry.positions.length > 1} />
                   ))}
