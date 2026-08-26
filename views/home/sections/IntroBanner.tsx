@@ -1,5 +1,6 @@
-import { RotatingBadge } from '@/components/sections/RotatingBadge'
-import { SpinningLink } from '@/components/sections/SpinningLink'
+import Link from 'next/link'
+import { ArrowRight } from 'lucide-react'
+import { ROUTES } from '@/constants'
 import { cn } from '@/lib'
 
 const RIBBON_A = ['React', 'Next.js', 'TypeScript']
@@ -22,23 +23,19 @@ const RIBBON_B = [
 interface RibbonProps {
   items: string[]
   tone: 'strong' | 'soft'
-  direction?: 'left' | 'right'
-  duration?: string
 }
 
-function Ribbon({ items, tone, direction = 'left', duration = '28s' }: RibbonProps) {
+function Ribbon({ items, tone }: RibbonProps) {
   const track = [...items, ...items, ...items]
 
   return (
     <div
       className={cn(
         'flex w-max items-center gap-8 border-y py-5 whitespace-nowrap',
-        direction === 'left' ? 'marquee-track' : 'marquee-track-reverse',
         tone === 'strong'
           ? 'border-background/20 bg-foreground text-background'
           : 'border-line bg-muted text-foreground'
-      )}
-      style={{ animationDuration: duration }}>
+      )}>
       {track.map((item, i) => (
         <span key={`${item}-${i}`} className="flex items-center gap-8 font-mono text-xs tracking-widest uppercase">
           {item}
@@ -53,11 +50,7 @@ export function IntroBanner() {
   return (
     <div className="relative isolate overflow-hidden border-b border-line bg-background text-foreground">
       <div className="container relative z-10 pt-10 pb-40 sm:pt-16 sm:pb-52">
-        <div className="flex justify-start">
-          <RotatingBadge text="SOLOMON ADEOYE • BUILD & SHIP • " />
-        </div>
-
-        <div className="mt-6 flex items-center gap-8 sm:pt-12">
+        <div className="flex items-center gap-8 sm:pt-12">
           <div aria-hidden="true" className="hidden flex-col gap-10 lg:flex">
             {['Frontend', 'Backend', 'Full stack'].map((label) => (
               <span
@@ -86,6 +79,13 @@ export function IntroBanner() {
             </h2>
 
             <h2 className="mt-3 text-4xl leading-[1.2] tracking-tight sm:mt-4 sm:text-6xl">Mobile app.</h2>
+
+            <Link
+              href={ROUTES.work}
+              className="group mt-8 inline-flex items-center gap-2 font-mono text-xs tracking-wider text-muted-foreground uppercase transition-colors hover:text-foreground">
+              See my work
+              <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+            </Link>
           </div>
         </div>
       </div>
@@ -95,7 +95,7 @@ export function IntroBanner() {
           <div className="absolute inset-y-0 right-0 w-[26%] overflow-hidden">
             <div className="absolute top-[-12%] left-[10%] right-0 w-[360%]">
               <div className="origin-top-left rotate-45">
-                <Ribbon items={RIBBON_A} tone="strong" direction="left" duration="20s" />
+                <Ribbon items={RIBBON_A} tone="strong" />
               </div>
             </div>
           </div>
@@ -105,13 +105,9 @@ export function IntroBanner() {
       <div aria-hidden="true" className="pointer-events-none absolute inset-x-0 bottom-0 h-16 overflow-hidden sm:h-80 lg:h-96">
         <div className="absolute -bottom-1/2 -left-1/4 w-[200%] sm:bottom-0 sm:left-[-10%] sm:w-[220%]">
           <div className="origin-bottom-left -rotate-6 sm:rotate-[-8deg]">
-            <Ribbon items={RIBBON_B} tone="soft" direction="right" duration="42s" />
+            <Ribbon items={RIBBON_B} tone="soft" />
           </div>
         </div>
-      </div>
-
-      <div className="absolute right-6 bottom-20 z-10 sm:right-12 sm:bottom-8">
-        <SpinningLink href="/work" text="SEE MY WORK • VIEW PROJECTS • " />
       </div>
     </div>
   )

@@ -1,8 +1,11 @@
+export type ExperienceEmployment = 'full-time' | 'contract' | 'internship'
+
 export interface ExperiencePosition {
   title: string;
   period: string;
   duration?: string;
   current?: boolean;
+  employment: ExperienceEmployment;
   summary: string;
   tools: string[];
 }
@@ -22,6 +25,7 @@ export const EXPERIENCE: ExperienceCompany[] = [
         period: 'May 2026 – Present',
         duration: '4m',
         current: true,
+        employment: 'full-time',
         summary:
           'Built and maintain Trovo’s VTU platform end to end — the customer site and wallet dashboard, the Laravel API behind cheapest-route data, airtime, and bills, and the WhatsApp and Telegram bots that run the same purchase flow in chat.',
         tools: [
@@ -44,11 +48,11 @@ export const EXPERIENCE: ExperienceCompany[] = [
     positions: [
       {
         title: 'Full Stack Developer',
-        period: 'Mar 2025 – Present',
-        duration: '1y 5m',
-        current: true,
+        period: 'May 2025 – Nov 2025',
+        duration: '7m',
+        employment: 'contract',
         summary:
-          'Built and maintain Buddie-X’s mentorship marketplace end to end — the public web app, mentor and mentee dashboards, and the Laravel API behind discovery, 1:1 booking, sessions, community, payments, and payouts.',
+          'Built and maintained Buddie-X’s mentorship marketplace end to end — the public web app, mentor and mentee dashboards, and the Laravel API behind discovery, 1:1 booking, sessions, community, payments, and payouts.',
         tools: [
           'React',
           'TypeScript',
@@ -74,6 +78,7 @@ export const EXPERIENCE: ExperienceCompany[] = [
         period: 'Oct 2025 – Present',
         duration: '10m',
         current: true,
+        employment: 'full-time',
         summary:
           'Develop and maintain Klone’s customer and business React Native applications, building booking and reservation flows, real-time communication with WebSockets, push notifications with OneSignal, product analytics with Mixpanel, account management, and native integrations across iOS and Android.',
         tools: [
@@ -94,6 +99,7 @@ export const EXPERIENCE: ExperienceCompany[] = [
         period: 'Nov 2024 – Present',
         duration: '1y 9m',
         current: true,
+        employment: 'full-time',
         summary:
           'Develop and maintain Klone’s web platform, including the core admin dashboard and booking system with real-time availability, role-based access control, and Google Maps and Calendar integrations supporting customer and business operations.',
         tools: [
@@ -117,6 +123,7 @@ export const EXPERIENCE: ExperienceCompany[] = [
         title: 'Frontend Developer',
         period: 'Jul 2025 – Mar 2026',
         duration: '9m',
+        employment: 'full-time',
         summary:
           'Developed payment infrastructure and business-facing products for a fintech platform, building the payment gateway, B2B dashboard, transaction workflows, and developer documentation to support merchant and API integrations.',
         tools: [
@@ -139,6 +146,7 @@ export const EXPERIENCE: ExperienceCompany[] = [
         period: 'Oct 2025 – Present',
         duration: '10m',
         current: true,
+        employment: 'full-time',
         summary:
           'Modernized and expanded the company’s technology platform across new codebases and infrastructure, building Next.js and NestJS applications spanning logistics, news, AI-powered products, real-time chat and calls, live tracking, and partner platforms.',
         tools: [
@@ -160,6 +168,7 @@ export const EXPERIENCE: ExperienceCompany[] = [
         title: 'Full Stack Developer',
         period: 'Sep 2022 – Oct 2024',
         duration: '2y 1m',
+        employment: 'full-time',
         summary:
           'Built and maintained the original logistics platform using Laravel and React, developing REST APIs, wallet and payment functionality, trip management, authentication, and business dashboards for delivery operations.',
         tools: [
@@ -183,6 +192,7 @@ export const EXPERIENCE: ExperienceCompany[] = [
         title: 'Frontend Intern',
         period: 'Jun 2021 – Sep 2021',
         duration: '3m',
+        employment: 'internship',
         summary:
           'Developed responsive web interfaces using HTML, CSS, JavaScript, and Bootstrap, translating designs into cross-browser compatible experiences while contributing to debugging, version control, and Agile development workflows.',
         tools: [

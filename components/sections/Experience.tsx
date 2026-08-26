@@ -2,14 +2,23 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { AnimatePresence, motion } from 'framer-motion'
-import { ChevronDown, CodeXml } from 'lucide-react'
+import { ArrowRight, ChevronDown, CodeXml } from 'lucide-react'
 import { IconTile, TechBadge } from '@/components/reusable'
-import { EXPERIENCE, type ExperiencePosition } from '@/data'
+import { EXPERIENCE, type ExperienceEmployment, type ExperiencePosition } from '@/data'
+import { ROUTES } from '@/constants'
 import { EASE_OUT } from '@/lib'
 import { Reveal } from '../motion'
 
+const EMPLOYMENT_LABEL: Record<ExperienceEmployment, string> = {
+  'full-time': 'Full-time',
+  contract: 'Contract',
+  internship: 'Internship',
+}
+
 function PositionAccordion({ position, showRail }: { position: ExperiencePosition; showRail: boolean }) {
+
   const [open, setOpen] = useState(true)
 
   return (
@@ -52,6 +61,8 @@ function PositionAccordion({ position, showRail }: { position: ExperiencePositio
                 <span>{position.duration}</span>
               </>
             )}
+            <span aria-hidden="true">·</span>
+            <span>{EMPLOYMENT_LABEL[position.employment]}</span>
             {position.current && (
               <>
                 <span aria-hidden="true">·</span>
@@ -94,16 +105,24 @@ function PositionAccordion({ position, showRail }: { position: ExperiencePositio
   )
 }
 
-export function Experience() {
+interface ExperienceProps {
+  limit?: number
+}
+
+export function Experience({ limit }: ExperienceProps) {
+  const entries = limit != null ? EXPERIENCE.slice(0, limit) : EXPERIENCE
+  const remaining = EXPERIENCE.length - entries.length
+  const preview = limit != null
+
   return (
-    <div className="border-b border-line">
+    <div id="experience" className="scroll-mt-(--header-height) border-b border-line">
       <div className="container py-10 sm:py-16">
         <p className="font-mono text-xs tracking-wider text-muted-foreground uppercase">Experience</p>
         <div className="mt-3 h-px w-10 bg-foreground" aria-hidden="true" />
 
         <div className="mt-10 border-t border-line sm:mt-12">
-          {EXPERIENCE.map((entry, index) => (
-            <Reveal key={entry.company} delay={index * 0.08} y={20}>
+          {entries.map((entry, index) => {
+            const body = (
               <div className="border-b border-line py-5">
                 <div className="flex items-center gap-3">
                   {entry.logo ? (
@@ -134,9 +153,26 @@ export function Experience() {
                   ))}
                 </div>
               </div>
-            </Reveal>
-          ))}
+            )
+
+            if (preview) return <div key={entry.company}>{body}</div>
+
+            return (
+              <Reveal key={entry.company} delay={index * 0.08} y={20}>
+                {body}
+              </Reveal>
+            )
+          })}
         </div>
+
+        {remaining > 0 && (
+          <Link
+            href={`${ROUTES.about}#experience`}
+            className="group mt-8 inline-flex items-center gap-2 font-mono text-xs tracking-wider text-muted-foreground uppercase transition-colors hover:text-foreground">
+            View more
+            <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+          </Link>
+        )}
       </div>
     </div>
   )

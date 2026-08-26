@@ -11,7 +11,7 @@ export function RotatingBadge({ text = 'SOLOMON ADEOYE • FULL STACK • ', inv
   return (
     <div aria-hidden="true" className="relative shrink-0" style={{ width: SIZE, height: SIZE }}>
 
-      <svg viewBox={`0 0 ${SIZE} ${SIZE}`} className="absolute inset-0 h-full w-full animate-[spin_16s_linear_infinite]" aria-hidden="true">
+      <svg viewBox={`0 0 ${SIZE} ${SIZE}`} className="absolute inset-0 h-full w-full" aria-hidden="true">
 
         <defs>
           <path
@@ -27,13 +27,9 @@ export function RotatingBadge({ text = 'SOLOMON ADEOYE • FULL STACK • ', inv
       </svg>
 
       <div className="absolute inset-0 flex items-center justify-center">
-        <div
-          className={
-            inverted
-              ? 'flex size-9 items-center justify-center rounded-full border border-background/30 bg-foreground font-mono text-[10px] font-medium'
+        <div className={ inverted ? 'flex size-9 items-center justify-center rounded-full border border-background/30 bg-foreground font-mono text-[10px] font-medium'
               : 'flex size-9 items-center justify-center rounded-full border border-line bg-background font-mono text-[10px] font-medium'
-          }
-          style={{ WebkitTextStroke: inverted ? '0.5px var(--background)' : '0.5px var(--foreground)', color: 'transparent' }}>
+          } style={{ WebkitTextStroke: inverted ? '0.5px var(--background)' : '0.5px var(--foreground)', color: 'transparent' }}>
           SA
         </div>
       </div>

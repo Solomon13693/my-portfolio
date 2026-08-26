@@ -136,36 +136,11 @@ html.splash-done .boot-splash {
     stroke-dashoffset: 0;
   }
 
-  .marquee-track,
-  .marquee-track-reverse,
   .reveal-up,
   .reveal-fade {
     animation: none !important;
     opacity: 1;
     transform: none;
-  }
-}
-
-.marquee-track {
-  animation: marquee-left 28s linear infinite;
-}
-
-.marquee-track-reverse {
-  animation: marquee-right 28s linear infinite;
-}
-
-@keyframes marquee-left {
-  to {
-    transform: translateX(-33.333%);
-  }
-}
-
-@keyframes marquee-right {
-  from {
-    transform: translateX(-33.333%);
-  }
-  to {
-    transform: translateX(0);
   }
 }
 

@@ -11,16 +11,12 @@ export function PageHeader({ eyebrow, title, description, sidebarLabels }: PageH
   return (
     <div className="relative border-b border-line">
       {sidebarLabels && sidebarLabels.length > 0 && (
-        <div
-          aria-hidden="true"
-          className="absolute top-28 left-6 hidden w-8 flex-col gap-10 md:left-12 lg:flex"
-        >
+        <div aria-hidden="true" className="absolute top-28 left-6 hidden w-8 flex-col gap-10 md:left-12 lg:flex">
           {sidebarLabels.map((label) => (
             <span
               key={label}
               className="font-mono text-xs tracking-widest text-muted-foreground uppercase"
-              style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
-            >
+              style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}>
               {label}
             </span>
           ))}
@@ -41,8 +37,7 @@ export function PageHeader({ eyebrow, title, description, sidebarLabels }: PageH
             <span
               aria-hidden="true"
               className="pointer-events-none absolute -top-6 -left-2 -z-10 hidden font-bold text-[10rem] leading-none select-none sm:-top-10 sm:block sm:text-[14rem]"
-              style={{ WebkitTextStroke: '1px var(--line)', color: 'transparent' }}
-            >
+              style={{ WebkitTextStroke: '1px var(--line)', color: 'transparent' }}>
               {title[0]}
             </span>
 

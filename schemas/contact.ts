@@ -1,4 +1,4 @@
-import { isValidPhoneNumber } from 'react-phone-number-input'
+import { isValidPhoneNumber } from 'libphonenumber-js'
 
 export interface ContactFormValues {
   name: string
@@ -36,6 +36,8 @@ export function validateContactForm(values: ContactFormValues): ContactFormError
     errors.message = 'Message is required'
   } else if (values.message.trim().length < 10) {
     errors.message = 'Message must be at least 10 characters'
+  } else if (values.message.trim().length > 5000) {
+    errors.message = 'Message must be 5000 characters or less'
   }
 
   return errors

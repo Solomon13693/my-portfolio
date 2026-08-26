@@ -1,6 +1,5 @@
 import { Suspense } from 'react'
-import { TechStack } from '@/components/sections'
-import { Reveal } from '@/components/motion'
+import { Experience, TechStack } from '@/components/sections'
 import { IntroBanner, Hero, Overview, Hello, GitHubContributions } from './sections'
 
 function GitHubFallback() {
@@ -18,22 +17,13 @@ export function HomeView() {
     <div className="w-full">
       <IntroBanner />
       <Hero />
-
-      <Reveal>
-        <Overview />
-      </Reveal>
-
-      <Reveal>
-        <Hello />
-      </Reveal>
-
+      <Overview />
+      <Hello />
+      <TechStack />
+      <Experience limit={2} />
       <Suspense fallback={<GitHubFallback />}>
         <GitHubContributions />
       </Suspense>
-
-      <Reveal>
-        <TechStack />
-      </Reveal>
     </div>
   )
 }
