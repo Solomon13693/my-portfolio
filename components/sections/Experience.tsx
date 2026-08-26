@@ -124,9 +124,13 @@ export function Experience() {
                   <h3 className="text-lg font-medium tracking-tight">{entry.company}</h3>
                 </div>
 
-                <div className="mt-0 px-9">
+                <div className="mt-0 pl-3">
                   {entry.positions.map((position) => (
-                    <PositionAccordion key={position.title} position={position} showRail={entry.positions.length > 1} />
+                    <PositionAccordion
+                      key={`${position.title}-${position.period}`}
+                      position={position}
+                      showRail={entry.positions.length > 1}
+                    />
                   ))}
                 </div>
               </div>

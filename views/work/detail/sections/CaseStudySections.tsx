@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import { Compass, Flag, Hammer, Layers, Zap, type LucideIcon } from 'lucide-react'
 import { IconTile } from '@/components/reusable'
-import type { Project } from '@/data'
+import type { Project } from '@/types'
 import { EASE_OUT } from '@/lib'
 
 const SECTION_ICONS: Record<string, LucideIcon> = {

@@ -7,7 +7,7 @@ import { ArrowLeft, Check, ChevronDown, Link2, Share2, type LucideIcon } from 'l
 import type { IconType } from 'react-icons'
 import { FaFacebook, FaLinkedin, FaWhatsapp } from 'react-icons/fa6'
 import { SiX } from 'react-icons/si'
-import type { Project } from '@/data'
+import type { Project } from '@/types'
 import { EASE_OUT } from '@/lib'
 
 interface HeaderProps {
@@ -194,18 +194,6 @@ export function Header({ project }: HeaderProps) {
           <span>{project.company}</span>
           <span aria-hidden="true">·</span>
           <span>{project.period}</span>
-          {project.current && (
-            <>
-              <span aria-hidden="true">·</span>
-              <span className="inline-flex items-center gap-1.5 text-foreground">
-                <span className="relative flex size-1.5" aria-hidden="true">
-                  <span className="absolute inline-flex size-1.5 animate-ping rounded-full bg-foreground/50" />
-                  <span className="relative inline-flex size-1.5 rounded-full bg-foreground" />
-                </span>
-                Current
-              </span>
-            </>
-          )}
         </p>
       </div>
     </div>

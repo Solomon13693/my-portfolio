@@ -5,7 +5,15 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { Copy, Check } from 'lucide-react'
 import { cn, EASE_OUT } from '@/lib'
 
-export function CopyButton({ value, className }: { value: string; className?: string }) {
+export function CopyButton({
+  value,
+  label,
+  className,
+}: {
+  value: string
+  label?: string
+  className?: string
+}) {
   const [copied, setCopied] = useState(false)
 
   const onCopy = async () => {
@@ -22,10 +30,10 @@ export function CopyButton({ value, className }: { value: string; className?: st
     <motion.button
       type="button"
       onClick={onCopy}
-      aria-label="Copy"
+      aria-label={label ? `Copy ${label}` : 'Copy'}
       whileTap={{ scale: 0.85 }}
       className={cn(
-        'inline-flex size-6 shrink-0 items-center justify-center rounded-md text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100 hover:text-foreground',
+        'inline-flex size-6 shrink-0 items-center justify-center rounded-md text-muted-foreground opacity-100 transition-opacity hover:text-foreground sm:opacity-0 sm:group-hover:opacity-100 sm:focus-visible:opacity-100 sm:group-focus-within:opacity-100',
         className
       )}
     >

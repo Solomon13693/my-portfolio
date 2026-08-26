@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { ArrowUpRight } from 'lucide-react'
 import { PROJECTS } from '@/data'
@@ -9,7 +10,11 @@ import { Reveal } from '../motion'
 
 const MotionLink = motion.create(Link)
 
-export function ProjectsGrid() {
+interface ProjectsGridProps {
+  covers?: Record<string, string | null>
+}
+
+export function ProjectsGrid({ covers = {} }: ProjectsGridProps) {
   return (
     <div className="container py-10 sm:py-16">
 
@@ -21,21 +26,36 @@ export function ProjectsGrid() {
 
       <div className="mt-10 grid gap-8 sm:mt-16 sm:grid-cols-2">
 
-        {PROJECTS.map((project, index) => (
+        {PROJECTS.map((project, index) => {
+          const cover = covers[project.slug]
 
+          return (
           <Reveal key={project.slug} delay={index * 0.08} y={20} className="h-full">
 
             <MotionLink href={`/work/${project.slug}`} whileHover={{ y: -6 }} whileTap={{ scale: 0.98 }} transition={{ duration: 0.3, ease: EASE_OUT }} className="group block h-full border border-dashed border-line p-6 transition-colors hover:border-foreground/40 hover:bg-muted/40">
 
               <div className="relative flex aspect-video w-full items-center justify-center overflow-hidden border border-line bg-muted">
 
-                <span aria-hidden="true" className="pointer-events-none font-bold text-7xl select-none" style={{ WebkitTextStroke: '1px var(--line)', color: 'transparent' }}>
-                  {project.title[0]}
-                </span>
+                {cover ? (
+                  <Image
+                    src={cover}
+                    alt={`${project.title} preview`}
+                    fill
+                    sizes="(min-width: 640px) 50vw, 100vw"
+                    priority={index === 0}
+                    className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
+                  />
+                ) : (
+                  <>
+                    <span aria-hidden="true" className="pointer-events-none font-bold text-7xl select-none" style={{ WebkitTextStroke: '1px var(--line)', color: 'transparent' }}>
+                      {project.title[0]}
+                    </span>
 
-                <span className="absolute right-3 bottom-3 font-mono text-[10px] tracking-wider text-muted-foreground uppercase">
-                  Screenshot soon
-                </span>
+                    <span className="absolute right-3 bottom-3 font-mono text-[10px] tracking-wider text-muted-foreground uppercase">
+                      Screenshot soon
+                    </span>
+                  </>
+                )}
 
               </div>
 
@@ -60,8 +80,8 @@ export function ProjectsGrid() {
             </MotionLink>
 
           </Reveal>
-
-        ))}
+          )
+        })}
 
       </div>
 

@@ -1,4 +1,4 @@
-import type { Project } from '@/data'
+import type { Project } from '@/types'
 
 interface OverviewProps {
   project: Project

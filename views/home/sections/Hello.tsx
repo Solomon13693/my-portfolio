@@ -34,7 +34,7 @@ export function Hello() {
         </p>
 
         <Link href={ROUTES.about} className="group inline-flex items-center gap-2 font-mono text-xs tracking-wider text-muted-foreground uppercase transition-colors hover:text-foreground">
-          Read more
+          About me
           <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-1" aria-hidden="true" />
         </Link>
 

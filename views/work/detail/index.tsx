@@ -1,5 +1,5 @@
 import { Reveal } from '@/components/motion'
-import type { Project, ProjectMediaItem } from '@/data'
+import type { Project, ProjectMediaItem } from '@/types'
 import { Header, ProjectMeta, Media, Overview, CaseStudySections } from './sections'
 
 interface WorkDetailViewProps {

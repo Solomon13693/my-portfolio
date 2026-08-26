@@ -1,6 +1,6 @@
 import { readdirSync } from 'node:fs'
 import { extname, join } from 'node:path'
-import type { ProjectMediaItem } from '@/data'
+import type { ProjectMediaItem } from '@/types'
 
 const MEDIA_ROOT = join(process.cwd(), 'public', 'img', 'work')
 
@@ -8,18 +8,12 @@ const IMAGE_EXTENSIONS = new Set(['.jpg', '.jpeg', '.png', '.webp', '.avif', '.g
 const VIDEO_EXTENSIONS = new Set(['.mp4', '.webm', '.mov'])
 
 function humanize(filename: string): string {
-  return filename
-    .slice(0, -extname(filename).length)
-    .replace(/^\d+[-_]?/, '')
-    .replace(/[-_]+/g, ' ')
-    .trim()
+  const withoutExt = filename.slice(0, -extname(filename).length)
+  const cleaned = withoutExt.replace(/^\d+[-_]?/, '').replace(/[-_]+/g, ' ').trim()
+  return cleaned || `Screenshot ${withoutExt}`
 }
 
-/**
- * Drop image/video files into `public/img/work/<slug>/` and they show up in
- * the project's carousel automatically — no data file edits needed. Prefix
- * filenames with a number (01-hero.png, 02-flow.png) to control order.
- */
+
 export function getProjectMedia(slug: string): ProjectMediaItem[] {
   let files: string[]
 
@@ -41,4 +35,9 @@ export function getProjectMedia(slug: string): ProjectMediaItem[] {
       if (VIDEO_EXTENSIONS.has(ext)) return [{ type: 'video', src, alt }]
       return []
     })
+}
+
+export function getProjectCover(slug: string): string | null {
+  const image = getProjectMedia(slug).find((item) => item.type === 'image')
+  return image?.src ?? null
 }

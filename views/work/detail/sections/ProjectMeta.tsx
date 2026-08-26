@@ -3,7 +3,8 @@
 import { motion } from 'framer-motion'
 import { Activity, ArrowUpRight, Link2, User, Wrench } from 'lucide-react'
 import { TechBadge, IconTile } from '@/components/reusable'
-import { PROFILE, STACK, type Project } from '@/data'
+import { PROFILE, STACK } from '@/data'
+import type { Project } from '@/types'
 import { EASE_OUT } from '@/lib'
 
 const STACK_HREFS = new Map(STACK.flatMap((category) => category.items.map((item) => [item.name, item.href])))

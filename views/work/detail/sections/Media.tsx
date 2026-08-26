@@ -1,11 +1,13 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Image from 'next/image'
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import { ArrowLeft, ArrowRight, Images } from 'lucide-react'
-import type { Project, ProjectMediaItem } from '@/data'
+import type { Project, ProjectMediaItem } from '@/types'
 import { EASE_OUT } from '@/lib'
+
+const AUTOPLAY_SECONDS = 5
 
 interface MediaProps {
   project: Project
@@ -23,9 +25,11 @@ const slideTransition = {
   opacity: { duration: 0.25 },
 }
 
-function Slide({ item }: { item: ProjectMediaItem }) {
+function Slide({ item, contain }: { item: ProjectMediaItem; contain: boolean }) {
+  const fit = contain ? 'object-contain' : 'object-cover'
+
   if (item.type === 'image') {
-    return <Image src={item.src} alt={item.alt} fill sizes="(min-width: 768px) 768px, 100vw" className="object-cover" />
+    return <Image src={item.src} alt={item.alt} fill sizes="(min-width: 768px) 768px, 100vw" className={fit} />
   }
 
   if (item.type === 'video') {
@@ -35,7 +39,7 @@ function Slide({ item }: { item: ProjectMediaItem }) {
         poster={item.poster}
         controls
         playsInline
-        className="size-full object-cover"
+        className={`size-full ${fit}`}
         aria-label={item.alt}
       />
     )
@@ -55,11 +59,26 @@ function Slide({ item }: { item: ProjectMediaItem }) {
 
 export function Media({ project, media }: MediaProps) {
   const [[index, direction], setSlide] = useState<[number, number]>([0, 0])
+  const reduceMotion = useReducedMotion()
 
   const goTo = (next: number, dir: number) => {
+    if (media.length === 0) return
     const wrapped = (next + media.length) % media.length
     setSlide([wrapped, dir])
   }
+
+  const canAutoplay = media.length > 1 && !reduceMotion && media[index]?.type === 'image'
+
+  useEffect(() => {
+    if (!canAutoplay) return
+
+    const total = media.length
+    const id = window.setTimeout(() => {
+      setSlide(([i]) => [(i + 1) % total, 1])
+    }, AUTOPLAY_SECONDS * 1000)
+
+    return () => window.clearTimeout(id)
+  }, [canAutoplay, index, media.length])
 
   if (media.length === 0) {
     return (
@@ -88,6 +107,7 @@ export function Media({ project, media }: MediaProps) {
   }
 
   const item = media[index]
+  const contain = project.mediaFit === 'contain'
 
   return (
     <div className="border-b border-line">
@@ -95,12 +115,13 @@ export function Media({ project, media }: MediaProps) {
         <div
           className="relative flex aspect-video w-full items-center justify-center overflow-hidden border border-line bg-muted outline-none"
           tabIndex={media.length > 1 ? 0 : undefined}
+          aria-roledescription="carousel"
+          aria-label={`${project.title} screenshots`}
           onKeyDown={(e) => {
             if (media.length <= 1) return
             if (e.key === 'ArrowRight') goTo(index + 1, 1)
             if (e.key === 'ArrowLeft') goTo(index - 1, -1)
-          }}
-        >
+          }}>
           <AnimatePresence initial={false} custom={direction}>
             <motion.div
               key={index}
@@ -117,11 +138,21 @@ export function Media({ project, media }: MediaProps) {
                 if (info.offset.x < -80) goTo(index + 1, 1)
                 else if (info.offset.x > 80) goTo(index - 1, -1)
               }}
-              className="absolute inset-0"
-            >
-              <Slide item={item} />
+              className="absolute inset-0">
+              <Slide item={item} contain={contain} />
             </motion.div>
           </AnimatePresence>
+
+          {canAutoplay && (
+            <motion.span
+              key={index}
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-0.5 origin-left bg-foreground/45"
+              initial={{ scaleX: 0, originX: 0 }}
+              animate={{ scaleX: 1, originX: 0 }}
+              transition={{ duration: AUTOPLAY_SECONDS, ease: 'linear' }}
+            />
+          )}
 
           {media.length > 1 && (
             <>

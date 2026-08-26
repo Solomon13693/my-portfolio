@@ -26,13 +26,13 @@ export function Overview() {
           <span className="text-muted-foreground">{' // WAT'}</span>
         </BioRow>
 
-        <BioRow icon={<Phone />} copyValue={PROFILE.phone}>
+        <BioRow icon={<Phone />} copyValue={PROFILE.phone} copyLabel="phone number">
           <a className="hover:text-foreground" href={`tel:${PROFILE.phone.replace(/\s/g, '')}`}>
             {PROFILE.phone}
           </a>
         </BioRow>
 
-        <BioRow icon={<Mail />} copyValue={PROFILE.email}>
+        <BioRow icon={<Mail />} copyValue={PROFILE.email} copyLabel="email">
           <a className="hover:text-foreground" href={`mailto:${PROFILE.email}`}>
             {PROFILE.email}
           </a>
