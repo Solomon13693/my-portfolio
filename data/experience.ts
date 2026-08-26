@@ -18,59 +18,6 @@ export interface ExperienceCompany {
 
 export const EXPERIENCE: ExperienceCompany[] = [
   {
-    company: 'Trovo',
-    positions: [
-      {
-        title: 'Full Stack Developer',
-        period: 'May 2026 – Present',
-        duration: '4m',
-        current: true,
-        employment: 'full-time',
-        summary:
-          'Built and maintain Trovo’s VTU platform end to end — the customer site and wallet dashboard, the Laravel API behind cheapest-route data, airtime, and bills, and the WhatsApp and Telegram bots that run the same purchase flow in chat.',
-        tools: [
-          'Next.js',
-          'TypeScript',
-          'Tailwind CSS',
-          'Laravel',
-          'TanStack Query',
-          'Monnify',
-          'WhatsApp Cloud API',
-          'Telegram Bot API',
-          'Git',
-        ],
-      },
-    ],
-  },
-
-  {
-    company: 'Buddie-X',
-    positions: [
-      {
-        title: 'Full Stack Developer',
-        period: 'May 2025 – Nov 2025',
-        duration: '7m',
-        employment: 'contract',
-        summary:
-          'Built and maintained Buddie-X’s mentorship marketplace end to end — the public web app, mentor and mentee dashboards, and the Laravel API behind discovery, 1:1 booking, sessions, community, payments, and payouts.',
-        tools: [
-          'React',
-          'TypeScript',
-          'Vite',
-          'Tailwind CSS',
-          'TanStack Query',
-          'Redux Toolkit',
-          'Laravel',
-          'Stripe',
-          'Firebase',
-          'Pusher',
-          'Git',
-        ],
-      },
-    ],
-  },
-
-  {
     company: 'Klone',
     positions: [
       {
