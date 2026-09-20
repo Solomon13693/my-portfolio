@@ -29,7 +29,7 @@ html:not(.splash-done) {
   --line: #e4e4e7;
   --header-height: 3.5rem;
 
-  /* Contribution-graph shading — black & white, not GitHub's green. */
+  /* Contribution-graph shading / black & white, not GitHub's green. */
   --gh-level-0: var(--muted);
   --gh-level-1: color-mix(in srgb, var(--foreground) 25%, var(--background));
   --gh-level-2: color-mix(in srgb, var(--foreground) 50%, var(--background));
@@ -45,7 +45,7 @@ html:not(.splash-done) {
   --line: #27272a;
 
   /* --gh-level-* derive from --foreground/--background via color-mix in :root,
-     which already flip in dark mode — no separate override needed here. */
+ which already flip in dark mode / no separate override needed here. */
 }
 
 /* css-languageservice-disable-next-line unknownAtRules */
@@ -76,14 +76,18 @@ body {
   opacity: 1;
   pointer-events: auto;
   visibility: visible;
-  transition: opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1), visibility 0s linear 0s;
+  transition:
+    opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    visibility 0s linear 0s;
 }
 
 html.splash-done .boot-splash {
   opacity: 0;
   pointer-events: none;
   visibility: hidden;
-  transition: opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1), visibility 0s linear 0.5s;
+  transition:
+    opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    visibility 0s linear 0.5s;
 }
 
 .boot-splash-ring {
@@ -177,8 +181,8 @@ html.splash-done .boot-splash {
   @apply w-full mx-auto px-6 md:px-12 max-w-screen-sm sm:max-w-3xl md:max-w-5xl lg:max-w-7xl xl:max-w-7xl 2xl:max-w-screen-2xl;
 }
 
-/* Form primitives — shared by components/ui/form/*. Neutral Tailwind grays for
-   now (not a designed palette) — colors get revisited once a direction is picked. */
+/* Form primitives / shared by components/ui/form/*. Neutral Tailwind grays for
+ now (not a designed palette) / colors get revisited once a direction is picked. */
 @layer components {
   .form-group {
     @apply mb-2;

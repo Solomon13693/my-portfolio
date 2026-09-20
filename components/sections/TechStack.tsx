@@ -6,7 +6,7 @@ export function TechStack() {
   return (
     <div className="border-b border-line">
       <div className="container py-10 sm:py-16">
-        <p className="font-mono text-xs tracking-wider text-muted-foreground uppercase">Stack</p>
+        <p className="font-mono text-xs tracking-wider text-muted-foreground uppercase">Skills</p>
         <div className="mt-3 h-px w-10 bg-foreground" aria-hidden="true" />
 
         <div className="mt-10 border-t border-line sm:mt-16">

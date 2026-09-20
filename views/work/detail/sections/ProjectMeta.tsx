@@ -1,16 +1,22 @@
-'use client'
+"use client";
 
-import { motion } from 'framer-motion'
-import { Activity, ArrowUpRight, Link2, User, Wrench } from 'lucide-react'
-import { TechBadge, IconTile } from '@/components/reusable'
-import { PROFILE, STACK } from '@/data'
-import type { Project } from '@/types'
-import { EASE_OUT } from '@/lib'
+import { motion } from "framer-motion";
+import { Activity, ArrowUpRight, Link2, User, Wrench } from "lucide-react";
+import { TechBadge, IconTile } from "@/components/reusable";
+import { PROFILE, STACK } from "@/data";
+import type { Project } from "@/types";
+import { EASE_OUT } from "@/lib";
 
-const STACK_HREFS = new Map(STACK.flatMap((category) => category.items.map((item) => [item.name, item.href])))
+const STACK_HREFS = new Map(
+  STACK.flatMap((category) =>
+    category.items
+      .filter((item): item is { name: string; href: string } => Boolean(item.href))
+      .map((item) => [item.name, item.href]),
+  ),
+);
 
 interface ProjectMetaProps {
-  project: Project
+  project: Project;
 }
 
 export function ProjectMeta({ project }: ProjectMetaProps) {
@@ -22,7 +28,9 @@ export function ProjectMeta({ project }: ProjectMetaProps) {
             <IconTile>
               <Activity aria-hidden="true" />
             </IconTile>
-            <p className="font-mono text-xs tracking-wider text-muted-foreground uppercase">Status</p>
+            <p className="font-mono text-xs tracking-wider text-muted-foreground uppercase">
+              Status
+            </p>
           </div>
           <div className="mt-4 flex flex-col gap-2">
             <span className="inline-flex w-fit items-center gap-1.5 font-mono text-xs tracking-wider uppercase">
@@ -34,10 +42,6 @@ export function ProjectMeta({ project }: ProjectMetaProps) {
               )}
               {project.status}
             </span>
-            <p className="text-sm font-medium tracking-tight sm:text-base">{project.period}</p>
-            {project.duration && (
-              <p className="font-mono text-xs text-muted-foreground">{project.duration} on this build</p>
-            )}
           </div>
         </div>
 
@@ -46,11 +50,16 @@ export function ProjectMeta({ project }: ProjectMetaProps) {
             <IconTile>
               <User aria-hidden="true" />
             </IconTile>
-            <p className="font-mono text-xs tracking-wider text-muted-foreground uppercase">Role</p>
+            <p className="font-mono text-xs tracking-wider text-muted-foreground uppercase">
+              Role
+            </p>
           </div>
           <ul className="mt-4 flex flex-col gap-1.5">
             {project.role.map((role) => (
-              <li key={role} className="text-sm font-medium tracking-tight sm:text-base">
+              <li
+                key={role}
+                className="text-sm font-medium tracking-tight sm:text-base"
+              >
                 {role}
               </li>
             ))}
@@ -62,7 +71,9 @@ export function ProjectMeta({ project }: ProjectMetaProps) {
             <IconTile>
               <Wrench aria-hidden="true" />
             </IconTile>
-            <p className="font-mono text-xs tracking-wider text-muted-foreground uppercase">Built with</p>
+            <p className="font-mono text-xs tracking-wider text-muted-foreground uppercase">
+              Built with
+            </p>
           </div>
           <ul className="mt-4 flex flex-wrap gap-1.5">
             {project.stack.map((tool) => (
@@ -78,7 +89,9 @@ export function ProjectMeta({ project }: ProjectMetaProps) {
             <IconTile>
               <Link2 aria-hidden="true" />
             </IconTile>
-            <p className="font-mono text-xs tracking-wider text-muted-foreground uppercase">Links</p>
+            <p className="font-mono text-xs tracking-wider text-muted-foreground uppercase">
+              Links
+            </p>
           </div>
           {project.links.length > 0 ? (
             <ul className="mt-4 flex flex-col gap-1.5">
@@ -104,7 +117,9 @@ export function ProjectMeta({ project }: ProjectMetaProps) {
             </ul>
           ) : (
             <div className="mt-4 flex flex-col gap-2">
-              <p className="text-sm text-muted-foreground">Private project — reach out for a walkthrough.</p>
+              <p className="text-sm text-muted-foreground">
+                Private project. Reach out for a walkthrough.
+              </p>
               <motion.a
                 href={PROFILE.github}
                 target="_blank"
@@ -125,7 +140,7 @@ export function ProjectMeta({ project }: ProjectMetaProps) {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default ProjectMeta
+export default ProjectMeta;

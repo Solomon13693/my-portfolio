@@ -5,7 +5,7 @@ export function Intro() {
     <PageHeader
       eyebrow="Get in touch"
       title="Contact"
-      description="Have a project in mind, an opportunity to discuss, or just want to connect? I’d love to hear from you."
+      description="Hiring for booking, payments, or logistics products? Or a collaboration on web, mobile, or full-stack? I'm in Lagos (UTC+1) and open to remote. A short note about the problem is enough."
       sidebarLabels={['Email', 'Connect', 'Message']}
     />
   )

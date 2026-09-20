@@ -1,7 +1,7 @@
 import { Mail, Phone, MapPin, Clock } from 'lucide-react'
 import { SiGithub, SiInstagram } from 'react-icons/si'
 import { FaLinkedin } from 'react-icons/fa6'
-import { BioRow, LiveClock } from '@/components/reusable'
+import { BioRow, LiveClock, DownloadResumeLink } from '@/components/reusable'
 import { PROFILE } from '@/data'
 
 const SOCIALS = [
@@ -47,6 +47,10 @@ export function Details() {
             <Icon className="size-4" aria-hidden="true" />
           </a>
         ))}
+      </div>
+
+      <div className="mt-8">
+        <DownloadResumeLink variant="button" />
       </div>
     </div>
   )

@@ -26,7 +26,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <SiteThemeProvider>
           <LoadingScreen />
           <Header />
-          <main className="flex-1">
+          <main className="flex min-h-0 flex-1 flex-col">
             <PageTransition>{children}</PageTransition>
           </main>
           <Footer />

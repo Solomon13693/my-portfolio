@@ -1,6 +1,6 @@
 import { Suspense } from 'react'
 import { Experience, TechStack } from '@/components/sections'
-import { IntroBanner, Hero, Overview, Hello, GitHubContributions } from './sections'
+import { IntroBanner, Hero, Overview, Hello, SelectedSystems, GitHubContributions } from './sections'
 
 function GitHubFallback() {
   return (
@@ -19,6 +19,7 @@ export function HomeView() {
       <Hero />
       <Overview />
       <Hello />
+      <SelectedSystems />
       <TechStack />
       <Experience limit={2} />
       <Suspense fallback={<GitHubFallback />}>

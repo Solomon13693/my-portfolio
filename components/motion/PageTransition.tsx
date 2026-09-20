@@ -1,25 +1,29 @@
-'use client'
+"use client";
 
-import { AnimatePresence, motion } from 'framer-motion'
-import { usePathname } from 'next/navigation'
-import type { ReactNode } from 'react'
-import { EASE_OUT } from '@/lib'
+import { motion } from "framer-motion";
+import { usePathname } from "next/navigation";
+import type { ReactNode } from "react";
+import { cn, EASE_OUT, isCvLabPath } from "@/lib";
 
+/**
+ * Soft page fade on client navigations. Avoid AnimatePresence mode="wait" /
+ * it can leave the next page stuck at opacity 0 when moving between routes.
+ */
 export function PageTransition({ children }: { children: ReactNode }) {
-  const pathname = usePathname()
+  const pathname = usePathname();
+  const lab = isCvLabPath(pathname);
 
   return (
-    <AnimatePresence mode="wait" initial={false}>
-      <motion.div
-        key={pathname}
-        initial={{ opacity: 0, y: 10 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -10 }}
-        transition={{ duration: 0.35, ease: EASE_OUT }}>
-        {children}
-      </motion.div>
-    </AnimatePresence>
-  )
+    <motion.div
+      key={pathname}
+      initial={{ opacity: 0, y: 8 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.3, ease: EASE_OUT }}
+      className={cn("min-h-0 w-full", lab && "flex flex-1 flex-col")}
+    >
+      {children}
+    </motion.div>
+  );
 }
 
-export default PageTransition
+export default PageTransition;

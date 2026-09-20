@@ -21,7 +21,18 @@ export function Bio() {
             {ABOUT.body}
           </p>
 
-          <dl className="mt-10 grid grid-cols-3 gap-8 border-t border-line pt-8">
+          <ul className="mt-8 max-w-2xl space-y-2 text-sm text-foreground/90">
+            {ABOUT.focusAreas.map((item) => (
+              <li key={item} className="flex gap-2">
+                <span className="text-muted-foreground" aria-hidden="true">
+                  ·
+                </span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+
+          <dl className="mt-10 grid grid-cols-2 gap-8 border-t border-line pt-8 sm:grid-cols-4">
             {STATS.map((stat, index) => (
               <Reveal key={stat.label} delay={index * 0.1} y={14}>
                 <div>

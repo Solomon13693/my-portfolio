@@ -1,0 +1,311 @@
+{
+  "version": 3,
+  "updatedAt": "2026-09-19T18:05:00.000Z",
+  "skeletonId": "single-column",
+  "templatePresetId": "classic-ink",
+  "theme": {
+    "headingFontId": "helvetica",
+    "bodyFontId": "helvetica",
+    "fontSize": "md",
+    "lineHeight": "normal",
+    "sectionGap": "md",
+    "headingColor": "#16233c",
+    "bodyColor": "#1c1c1c",
+    "accentColor": "#ececec",
+    "mutedColor": "#333333",
+    "density": "comfortable",
+    "pageSize": "Letter",
+    "headingStyle": "title",
+    "layoutStyle": "banded",
+    "showTimelineRail": false,
+    "showAccentBar": false
+  },
+  "profile": {
+    "name": "Adeoye Solomon Oluwatobi",
+    "headline": "Software Engineer · Web, Mobile & Full-Stack",
+    "email": "adeoyesolomon2693@gmail.com",
+    "phone": "+234 706 662 5389",
+    "location": "Lagos, Nigeria",
+    "links": [
+      {
+        "id": "link-linkedin",
+        "label": "LinkedIn",
+        "url": "https://www.linkedin.com/in/adeoye-solomon-094650219/"
+      },
+      {
+        "id": "link-github",
+        "label": "GitHub",
+        "url": "https://github.com/solomon13693"
+      },
+      {
+        "id": "link-website",
+        "label": "Website",
+        "url": "https://solomonadeoye.vercel.app"
+      }
+    ]
+  },
+  "sections": [
+    {
+      "id": "summary",
+      "title": "Professional Summary",
+      "layout": "text",
+      "visible": true,
+      "region": "main",
+      "content": "Software Engineer with 4+ years shipping production web, mobile, and backend systems across fintech, logistics, booking, and merchant platforms. Work spans React / React Native on the client and Node.js, NestJS, and Laravel on the server, including REST APIs, auth, wallets, and payment rails. Have shipped booking and reservation workflows, payment systems, and realtime features used by thousands of active users, and led engineering for a logistics platform through multi-year growth. Take features from requirements through development, testing, and production release."
+    },
+    {
+      "id": "skills",
+      "title": "Core Technical Skills",
+      "layout": "tags",
+      "visible": true,
+      "region": "main",
+      "entries": [
+        { "id": "sk-js", "label": "JavaScript (ES6+)", "group": "Languages", "visible": true },
+        { "id": "sk-ts", "label": "TypeScript", "group": "Languages", "visible": true },
+        { "id": "sk-php", "label": "PHP", "group": "Languages", "visible": true },
+        { "id": "sk-react", "label": "React", "group": "Frontend", "visible": true },
+        { "id": "sk-next", "label": "Next.js", "group": "Frontend", "visible": true },
+        { "id": "sk-vue", "label": "Vue.js", "group": "Frontend", "visible": true },
+        { "id": "sk-redux", "label": "Redux Toolkit", "group": "Frontend", "visible": true },
+        { "id": "sk-tq", "label": "TanStack Query", "group": "Frontend", "visible": true },
+        { "id": "sk-zustand", "label": "Zustand", "group": "Frontend", "visible": true },
+        { "id": "sk-tw", "label": "Tailwind CSS", "group": "Frontend", "visible": true },
+        { "id": "sk-rhf", "label": "React Hook Form", "group": "Frontend", "visible": true },
+        { "id": "sk-rn", "label": "React Native", "group": "Mobile", "visible": true },
+        { "id": "sk-expo", "label": "Expo", "group": "Mobile", "visible": true },
+        { "id": "sk-nav", "label": "React Navigation", "group": "Mobile", "visible": true },
+        { "id": "sk-nw", "label": "NativeWind", "group": "Mobile", "visible": true },
+        { "id": "sk-node", "label": "Node.js", "group": "Backend", "visible": true },
+        { "id": "sk-nest", "label": "NestJS", "group": "Backend", "visible": true },
+        { "id": "sk-express", "label": "Express.js", "group": "Backend", "visible": true },
+        { "id": "sk-laravel", "label": "Laravel", "group": "Backend", "visible": true },
+        { "id": "sk-rest", "label": "REST APIs", "group": "Backend", "visible": true },
+        { "id": "sk-redis", "label": "Redis", "group": "Backend", "visible": true },
+        { "id": "sk-bull", "label": "BullMQ", "group": "Backend", "visible": true },
+        { "id": "sk-sio", "label": "Socket.IO", "group": "Backend", "visible": true },
+        { "id": "sk-mysql", "label": "MySQL", "group": "Databases", "visible": true },
+        { "id": "sk-mongo", "label": "MongoDB", "group": "Databases", "visible": true },
+        { "id": "sk-pg", "label": "PostgreSQL", "group": "Databases", "visible": true },
+        { "id": "sk-paystack", "label": "Paystack", "group": "Payments & Integrations", "visible": true },
+        { "id": "sk-stripe", "label": "Stripe", "group": "Payments & Integrations", "visible": true },
+        { "id": "sk-monnify", "label": "Monnify", "group": "Payments & Integrations", "visible": true },
+        { "id": "sk-fb", "label": "Firebase", "group": "Payments & Integrations", "visible": true },
+        { "id": "sk-onesignal", "label": "OneSignal", "group": "Payments & Integrations", "visible": true },
+        { "id": "sk-pusher", "label": "Pusher", "group": "Payments & Integrations", "visible": true },
+        { "id": "sk-wa", "label": "WhatsApp Cloud API", "group": "Payments & Integrations", "visible": true },
+        { "id": "sk-tg", "label": "Telegram Bot API", "group": "Payments & Integrations", "visible": true },
+        { "id": "sk-maps", "label": "Google Maps API", "group": "Payments & Integrations", "visible": true },
+        { "id": "sk-cal", "label": "Google Calendar API", "group": "Payments & Integrations", "visible": true },
+        { "id": "sk-zoom", "label": "Zoom", "group": "Payments & Integrations", "visible": true },
+        { "id": "sk-mix", "label": "Mixpanel", "group": "Payments & Integrations", "visible": true },
+        { "id": "sk-docker", "label": "Docker", "group": "Tools & Infrastructure", "visible": true },
+        { "id": "sk-git", "label": "Git", "group": "Tools & Infrastructure", "visible": true },
+        { "id": "sk-ws", "label": "WebSockets", "group": "Tools & Infrastructure", "visible": true }
+      ]
+    },
+    {
+      "id": "experience",
+      "title": "Professional Work Experience",
+      "layout": "timeline",
+      "visible": true,
+      "region": "main",
+      "entries": [
+        {
+          "id": "exp-klone",
+          "organization": "Klone",
+          "visible": true,
+          "roles": [
+            {
+              "id": "role-klone",
+              "title": "Software Engineer",
+              "period": "November 2024 – Present",
+              "current": true,
+              "visible": true,
+              "tools": [
+                "React Native",
+                "React",
+                "Next.js",
+                "TypeScript",
+                "Tailwind CSS",
+                "React Navigation",
+                "TanStack Query",
+                "Redux",
+                "WebSockets",
+                "OneSignal",
+                "Mixpanel",
+                "Google Maps API",
+                "Google Calendar API"
+              ],
+              "bullets": [
+                "Build and maintain customer and vendor React Native apps (iOS/Android) plus customer, vendor, and admin web apps for booking, payments, ticketing, and scheduling.",
+                "Ship end-to-end reservation flows: search, listings, provider profiles, checkout, account management, and QR-based ticketing.",
+                "Implement auth, realtime messaging, and push notifications across web and mobile so ops and customers stay in sync.",
+                "Integrate Google Maps, Google Calendar, OneSignal, and Mixpanel for discovery, scheduling, notifications, and product analytics.",
+                "Partner with product and engineering to take features from requirements through testing and production release."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "exp-spout",
+          "organization": "Spout Payment",
+          "visible": true,
+          "roles": [
+            {
+              "id": "role-spout",
+              "title": "Frontend Developer (Remote)",
+              "period": "July 2025 – March 2026",
+              "current": false,
+              "visible": true,
+              "tools": ["Next.js", "React", "TypeScript", "Tailwind CSS", "REST APIs"],
+              "bullets": [
+                "Built merchant dashboard and payment UI for transaction tracking, account management, and live payment operations.",
+                "Shipped frontend payment and merchant workflows against REST APIs across the payment infrastructure.",
+                "Improved merchant and partner onboarding with clearer API integration flows and developer-facing documentation.",
+                "Delivered responsive, production-ready interfaces used by merchants managing real payment volume."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "exp-run",
+          "organization": "RUN Technologies / Deliverys",
+          "visible": true,
+          "roles": [
+            {
+              "id": "role-run",
+              "title": "Engineering Lead (Contract)",
+              "period": "September 2022 – May 2025",
+              "current": false,
+              "visible": true,
+              "tools": [
+                "React",
+                "Next.js",
+                "TypeScript",
+                "JavaScript",
+                "PHP",
+                "Laravel",
+                "NestJS",
+                "Node.js",
+                "MySQL",
+                "MongoDB",
+                "Redis",
+                "Socket.IO",
+                "Docker",
+                "Firebase",
+                "Google Maps API",
+                "Git"
+              ],
+              "bullets": [
+                "Led engineering across customer, merchant, admin, logistics, and payment systems for the company's core platform.",
+                "Scaled the platform to 150× order volume, 37× customer growth, and 18× rider-network growth (2022–2025), supporting millions of fulfilled orders across two markets.",
+                "Designed and shipped core logistics: order management, quotations, wallet checkout, rider assignment, and delivery management.",
+                "Implemented realtime rider tracking and communication with Socket.IO, Redis, and Firebase, including GPS location updates.",
+                "Modernized backends from Laravel toward Node.js/NestJS while building React/Next.js merchant and business dashboards.",
+                "Engineered card and wallet payment flows, REST APIs, auth, and partner integrations including secure webhooks."
+              ]
+            }
+          ]
+        },
+        {
+          "id": "exp-greenmouse",
+          "organization": "GreenMouse Tech",
+          "visible": true,
+          "roles": [
+            {
+              "id": "role-greenmouse",
+              "title": "Frontend Developer (Internship)",
+              "period": "June 2021 – September 2021",
+              "current": false,
+              "visible": true,
+              "tools": ["HTML5", "CSS3", "JavaScript", "Bootstrap", "Git"],
+              "bullets": [
+                "Built responsive web interfaces with HTML5, CSS3, JavaScript, and Bootstrap.",
+                "Debugged frontend issues in a collaborative engineering team using Git and Agile rituals."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "education",
+      "title": "Education",
+      "layout": "timeline",
+      "visible": true,
+      "region": "main",
+      "entries": [
+        {
+          "id": "edu-hnd",
+          "organization": "Ogun State Institute of Technology (OGITECH)",
+          "visible": true,
+          "roles": [
+            {
+              "id": "role-hnd",
+              "title": "Higher National Diploma (HND) / Software & Web Development",
+              "period": "November 2025 – Present",
+              "current": true,
+              "visible": true,
+              "tools": [],
+              "bullets": []
+            }
+          ]
+        },
+        {
+          "id": "edu-nd",
+          "organization": "Ogun State Institute of Technology (OGITECH)",
+          "visible": true,
+          "roles": [
+            {
+              "id": "role-nd",
+              "title": "National Diploma (ND) / Computer Science",
+              "period": "September 2022 – October 2024",
+              "current": false,
+              "visible": true,
+              "tools": [],
+              "bullets": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "certifications",
+      "title": "Certifications & Courses",
+      "layout": "list",
+      "visible": true,
+      "region": "main",
+      "entries": [
+        {
+          "id": "cert-rn",
+          "title": "React Native: The Practical Guide",
+          "subtitle": "Academind / Udemy",
+          "meta": "2026",
+          "href": "https://www.udemy.com/certificate/UC-ed8e86ef-156a-4167-86bf-fce5bf9198e3/",
+          "visible": true
+        },
+        {
+          "id": "cert-php",
+          "title": "PHP Master Class",
+          "subtitle": "DEVAHRAY",
+          "meta": "2022",
+          "visible": true
+        },
+        {
+          "id": "cert-web",
+          "title": "Web Designing / Web Development",
+          "subtitle": "KYEL HOUSE INTERN PROGRAM",
+          "meta": "2021",
+          "visible": true
+        },
+        {
+          "id": "cert-design",
+          "title": "Graphic Design",
+          "subtitle": "Mentis Design Academy",
+          "meta": "2020",
+          "visible": true
+        }
+      ]
+    }
+  ]
+}

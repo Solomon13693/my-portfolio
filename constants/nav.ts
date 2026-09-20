@@ -14,9 +14,15 @@ export const NAV_LINKS: NavLink[] = [
   },
   {
     id: "work",
-    label: "Work",
+    label: "Projects",
     href: "/work",
-    description: "Selected projects",
+    description: "Shipped products",
+  },
+  {
+    id: "cv-lab",
+    label: "CV Lab",
+    href: "/cv-lab",
+    description: "Build a resume & cover letter",
   },
   {
     id: "contact",

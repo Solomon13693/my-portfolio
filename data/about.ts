@@ -1,15 +1,28 @@
 export const ABOUT = {
-  eyebrow: "Who I am",
+  eyebrow: 'Who I am',
 
   headline:
-    "I’m Solomon. I build software products that solve real problems and deliver real value.",
+    "I'm Solomon. I ship production web, mobile, and backend systems across fintech, logistics, and booking.",
 
-  body:
-  "A Software Developer working across React Native, React, Next.js, Laravel, Node.js, and a wide range of modern technologies. I build web and mobile applications, APIs, dashboards, backend systems, and digital products designed to solve real-world problems. My work spans the full development process, from understanding an idea and translating product requirements into practical technical solutions to designing interfaces, building scalable application logic, integrating APIs and third-party services, working with databases, and delivering polished, production-ready software. I enjoy working across both the frontend and backend, understanding how different parts of a system connect, and choosing the right tools and technologies for each project rather than limiting myself to a single stack. Whether I am building a responsive web application, a cross-platform mobile app, an internal dashboard, a backend service, or the infrastructure that connects everything together, I focus on writing clean, maintainable code and creating software that is reliable, performant, and easy to use. I am constantly learning, experimenting with new technologies, improving my development process, and expanding my understanding of modern software engineering so I can build better products and contribute effectively to teams and projects."
-};
+  /** Short niche line for banners */
+  focus: 'Software Engineer · Web · Mobile · Full-Stack · Payments · Logistics · Booking',
 
+  /** Focus bullets under About / Hello */
+  focusAreas: [
+    'Booking & reservations · web and React Native',
+    'Payments · wallets · merchant dashboards',
+    'Logistics · quote, dispatch, and live tracking',
+    'Realtime · Socket.IO, push, and chat bots',
+    'TypeScript · React / Next.js · NestJS · Laravel',
+  ],
+
+  body: 'Software Engineer with 4+ years shipping production products across React / React Native, Next.js, NestJS, and Laravel, including REST APIs, auth, wallets, and payment rails. Have shipped booking and reservation workflows, payment systems, and realtime features used by thousands of active users, and led engineering for a logistics platform through multi-year growth. Take features from requirements through development, testing, and production release.',
+}
+
+/** Proof stats for About + home. Numbers from `file/resume.html`. */
 export const STATS = [
-  { value: "4 yrs", label: "hands-on experience" },
-  { value: "10", label: "projects shipped" },
-  { value: "5", label: "companies" },
-] as const;
+  { value: '4+', label: 'years shipping production software' },
+  { value: '3k+', label: 'users on Klone booking platforms' },
+  { value: '20k+', label: 'merchants & users on Spout Payment' },
+  { value: '150×', label: 'order volume growth at RUN / Deliverys' },
+] as const

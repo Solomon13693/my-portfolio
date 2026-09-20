@@ -1,96 +1,118 @@
-'use client'
+"use client";
 
-import { useEffect, useRef, useState } from 'react'
-import Link from 'next/link'
-import { AnimatePresence, motion } from 'framer-motion'
-import { ArrowLeft, Check, ChevronDown, Link2, Share2, type LucideIcon } from 'lucide-react'
-import type { IconType } from 'react-icons'
-import { FaFacebook, FaLinkedin, FaWhatsapp } from 'react-icons/fa6'
-import { SiX } from 'react-icons/si'
-import type { Project } from '@/types'
-import { EASE_OUT } from '@/lib'
+import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
+import { AnimatePresence, motion } from "framer-motion";
+import {
+  ArrowLeft,
+  Check,
+  ChevronDown,
+  Link2,
+  Share2,
+  type LucideIcon,
+} from "lucide-react";
+import type { IconType } from "react-icons";
+import { FaFacebook, FaLinkedin, FaWhatsapp } from "react-icons/fa6";
+import { SiX } from "react-icons/si";
+import type { Project } from "@/types";
+import { EASE_OUT } from "@/lib";
 
 interface HeaderProps {
-  project: Project
+  project: Project;
 }
 
-const MotionLink = motion.create(Link)
+const MotionLink = motion.create(Link);
 
 export function Header({ project }: HeaderProps) {
-  const [open, setOpen] = useState(false)
-  const [copied, setCopied] = useState(false)
+  const [open, setOpen] = useState(false);
+  const [copied, setCopied] = useState(false);
   // Only ever read after `open` becomes true (a user click), so a server/client
-  // mismatch here never reaches the DOM — safe without an effect.
-  const [canNativeShare] = useState(() => typeof navigator !== 'undefined' && Boolean(navigator.share))
-  const menuRef = useRef<HTMLDivElement>(null)
+  // mismatch here never reaches the DOM / safe without an effect.
+  const [canNativeShare] = useState(
+    () => typeof navigator !== "undefined" && Boolean(navigator.share),
+  );
+  const menuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!open) return
+    if (!open) return;
 
     const onPointerDown = (e: PointerEvent) => {
-      if (menuRef.current && !menuRef.current.contains(e.target as Node)) setOpen(false)
-    }
+      if (menuRef.current && !menuRef.current.contains(e.target as Node))
+        setOpen(false);
+    };
     const onKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setOpen(false)
-    }
+      if (e.key === "Escape") setOpen(false);
+    };
 
-    document.addEventListener('pointerdown', onPointerDown)
-    document.addEventListener('keydown', onKeyDown)
+    document.addEventListener("pointerdown", onPointerDown);
+    document.addEventListener("keydown", onKeyDown);
     return () => {
-      document.removeEventListener('pointerdown', onPointerDown)
-      document.removeEventListener('keydown', onKeyDown)
-    }
-  }, [open])
+      document.removeEventListener("pointerdown", onPointerDown);
+      document.removeEventListener("keydown", onKeyDown);
+    };
+  }, [open]);
 
-  const shareText = `${project.title} — ${project.tagline}`
+  const shareText = `${project.title} / ${project.tagline}`;
 
-  const socialLinks: { label: string; icon: LucideIcon | IconType; getUrl: (url: string) => string }[] = [
+  const socialLinks: {
+    label: string;
+    icon: LucideIcon | IconType;
+    getUrl: (url: string) => string;
+  }[] = [
     {
-      label: 'Share on X',
+      label: "Share on X",
       icon: SiX,
-      getUrl: (url) => `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(shareText)}`,
+      getUrl: (url) =>
+        `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(shareText)}`,
     },
     {
-      label: 'Share on LinkedIn',
+      label: "Share on LinkedIn",
       icon: FaLinkedin,
-      getUrl: (url) => `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`,
+      getUrl: (url) =>
+        `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(url)}`,
     },
     {
-      label: 'Share on WhatsApp',
+      label: "Share on WhatsApp",
       icon: FaWhatsapp,
-      getUrl: (url) => `https://wa.me/?text=${encodeURIComponent(`${shareText} ${url}`)}`,
+      getUrl: (url) =>
+        `https://wa.me/?text=${encodeURIComponent(`${shareText} ${url}`)}`,
     },
     {
-      label: 'Share on Facebook',
+      label: "Share on Facebook",
       icon: FaFacebook,
-      getUrl: (url) => `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
+      getUrl: (url) =>
+        `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
     },
-  ]
+  ];
 
   const onCopyLink = async () => {
     try {
-      await navigator.clipboard.writeText(window.location.href)
-      setCopied(true)
-      setTimeout(() => setCopied(false), 1500)
+      await navigator.clipboard.writeText(window.location.href);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1500);
     } catch {
-      // Clipboard access can fail (permissions, insecure context) — fail silently, no crash.
+      // Clipboard access can fail (permissions, insecure context) / fail silently, no crash.
     }
-    setOpen(false)
-  }
+    setOpen(false);
+  };
 
   const onSocialShare = (getUrl: (url: string) => string) => {
-    window.open(getUrl(window.location.href), '_blank', 'noopener,noreferrer')
-    setOpen(false)
-  }
+    window.open(getUrl(window.location.href), "_blank", "noopener,noreferrer");
+    setOpen(false);
+  };
 
   const onNativeShare = async () => {
     try {
-      await navigator.share({ title: project.title, text: project.tagline, url: window.location.href })
+      await navigator.share({
+        title: project.title,
+        text: project.tagline,
+        url: window.location.href,
+      });
     } catch {
-      // User cancelled the native share sheet — nothing to do.
+      // User cancelled the native share sheet / nothing to do.
     }
-    setOpen(false)
-  }
+    setOpen(false);
+  };
 
   return (
     <div className="border-b border-line">
@@ -103,7 +125,7 @@ export function Header({ project }: HeaderProps) {
           className="inline-flex items-center gap-2 font-mono text-xs tracking-wider text-muted-foreground uppercase transition-colors hover:text-foreground"
         >
           <ArrowLeft className="size-3.5" aria-hidden="true" />
-          Work
+          Projects
         </MotionLink>
 
         <div className="relative" ref={menuRef}>
@@ -119,18 +141,25 @@ export function Header({ project }: HeaderProps) {
           >
             <AnimatePresence mode="wait" initial={false}>
               <motion.span
-                key={copied ? 'check' : 'share'}
+                key={copied ? "check" : "share"}
                 initial={{ opacity: 0, scale: 0.6 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.6 }}
                 transition={{ duration: 0.15, ease: EASE_OUT }}
                 className="flex items-center gap-1.5"
               >
-                {copied ? <Check className="size-3.5" aria-hidden="true" /> : <Share2 className="size-3.5" aria-hidden="true" />}
-                {copied ? 'Copied' : 'Share'}
+                {copied ? (
+                  <Check className="size-3.5" aria-hidden="true" />
+                ) : (
+                  <Share2 className="size-3.5" aria-hidden="true" />
+                )}
+                {copied ? "Copied" : "Share"}
               </motion.span>
             </AnimatePresence>
-            <ChevronDown className={`size-3 transition-transform ${open ? 'rotate-180' : ''}`} aria-hidden="true" />
+            <ChevronDown
+              className={`size-3 transition-transform ${open ? "rotate-180" : ""}`}
+              aria-hidden="true"
+            />
           </motion.button>
 
           <AnimatePresence>
@@ -187,8 +216,12 @@ export function Header({ project }: HeaderProps) {
         <p className="font-mono text-xs tracking-wider text-muted-foreground uppercase">
           {project.status} · {project.tag}
         </p>
-        <h1 className="mt-3 text-4xl font-medium tracking-tight sm:text-6xl">{project.title}</h1>
-        <p className="mt-4 max-w-xl text-lg text-muted-foreground">{project.tagline}</p>
+        <h1 className="mt-3 text-4xl font-medium tracking-tight sm:text-6xl">
+          {project.title}
+        </h1>
+        <p className="mt-4 max-w-xl text-lg text-muted-foreground">
+          {project.tagline}
+        </p>
 
         <p className="mt-6 flex flex-wrap items-center gap-x-2 font-mono text-sm text-muted-foreground">
           <span>{project.company}</span>
@@ -197,7 +230,7 @@ export function Header({ project }: HeaderProps) {
         </p>
       </div>
     </div>
-  )
+  );
 }
 
-export default Header
+export default Header;

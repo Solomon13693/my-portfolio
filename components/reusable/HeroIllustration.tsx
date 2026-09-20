@@ -1,5 +1,5 @@
 /**
- * Original abstract isometric-block illustration — decorative only, never
+ * Original abstract isometric-block illustration / decorative only, never
  * carries content. Not a reproduction of any reference site's artwork.
  */
 export function HeroIllustration() {
@@ -13,8 +13,18 @@ export function HeroIllustration() {
         aria-hidden="true"
       >
         <defs>
-          <pattern id="hero-hatch" width="8" height="8" patternUnits="userSpaceOnUse">
-            <path d="M-1 1l2-2M0 8l8-8M7 9l2-2" stroke="currentColor" strokeWidth="1" opacity="0.35" />
+          <pattern
+            id="hero-hatch"
+            width="8"
+            height="8"
+            patternUnits="userSpaceOnUse"
+          >
+            <path
+              d="M-1 1l2-2M0 8l8-8M7 9l2-2"
+              stroke="currentColor"
+              strokeWidth="1"
+              opacity="0.35"
+            />
           </pattern>
         </defs>
 
@@ -26,11 +36,17 @@ export function HeroIllustration() {
 
         {/* interlocking isometric block cluster */}
         <g stroke="currentColor" strokeWidth="1">
-          <path d="M120 60 L200 20 L280 60 L280 120 L200 160 L120 120 Z" fill="url(#hero-hatch)" />
+          <path
+            d="M120 60 L200 20 L280 60 L280 120 L200 160 L120 120 Z"
+            fill="url(#hero-hatch)"
+          />
           <path d="M120 60 L200 100 L200 160" />
           <path d="M280 60 L200 100" />
 
-          <path d="M260 100 L340 60 L420 100 L420 160 L340 200 L260 160 Z" fill="url(#hero-hatch)" />
+          <path
+            d="M260 100 L340 60 L420 100 L420 160 L340 200 L260 160 Z"
+            fill="url(#hero-hatch)"
+          />
           <path d="M260 100 L340 140 L340 200" />
           <path d="M420 100 L340 140" />
         </g>
@@ -40,7 +56,7 @@ export function HeroIllustration() {
         Fig. 1.
       </figcaption>
     </figure>
-  )
+  );
 }
 
-export default HeroIllustration
+export default HeroIllustration;

@@ -1,23 +1,20 @@
-import Link from 'next/link'
-import { ArrowRight } from 'lucide-react'
-import { ROUTES } from '@/constants'
 import { cn } from '@/lib'
+import { ABOUT } from '@/data'
 
 const RIBBON_A = ['React', 'Next.js', 'TypeScript']
 const RIBBON_B = [
   'JavaScript',
-  'Typescript',
-  'React JS',
-  'Next JS',
+  'TypeScript',
+  'React',
+  'Next.js',
   'React Native',
-  'PHP',
-  'Tailwind CSS',
-  'REST APIs',
-  'GraphQL',
-  'MySQL',
-  'PostgreSQL',
+  'NestJS',
+  'Laravel',
+  'Paystack',
   'MongoDB',
   'Redis',
+  'Socket.IO',
+  'Tailwind CSS',
 ]
 
 interface RibbonProps {
@@ -35,7 +32,8 @@ function Ribbon({ items, tone }: RibbonProps) {
         tone === 'strong'
           ? 'border-background/20 bg-foreground text-background'
           : 'border-line bg-muted text-foreground'
-      )}>
+      )}
+    >
       {track.map((item, i) => (
         <span key={`${item}-${i}`} className="flex items-center gap-8 font-mono text-xs tracking-widest uppercase">
           {item}
@@ -52,40 +50,39 @@ export function IntroBanner() {
       <div className="container relative z-10 pt-10 pb-40 sm:pt-16 sm:pb-52">
         <div className="flex items-center gap-8 sm:pt-12">
           <div aria-hidden="true" className="hidden flex-col gap-10 lg:flex">
-            {['Frontend', 'Backend', 'Full stack'].map((label) => (
+            {['Web', 'Mobile', 'Full-stack'].map((label) => (
               <span
                 key={label}
                 className="font-mono text-xs tracking-widest text-muted-foreground uppercase"
-                style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}>
+                style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
+              >
                 {label}
               </span>
             ))}
           </div>
 
-          <div className="relative isolate">
+          <div className="relative isolate max-w-3xl">
             <span
               aria-hidden="true"
               className="pointer-events-none absolute -top-16 -left-2 -z-10 hidden font-bold text-[12rem] leading-none select-none sm:block sm:text-[24rem]"
-              style={{ WebkitTextStroke: '1px var(--line)', color: 'transparent' }}>
+              style={{ WebkitTextStroke: '1px var(--line)', color: 'transparent' }}
+            >
               S
             </span>
 
-            <h2 className="text-4xl leading-[1.2] tracking-tight sm:text-6xl">
-              <span className="text-muted-foreground">Software Developer.</span>
+            <p className="font-mono text-xs tracking-wider text-muted-foreground uppercase">{ABOUT.focus}</p>
+
+            <h2 className="mt-4 text-4xl leading-[1.15] tracking-tight sm:text-6xl">
+              <span className="text-muted-foreground">Software Engineer.</span>
             </h2>
 
-            <h2 className="mt-3 text-4xl leading-[1.2] tracking-tight sm:mt-4 sm:text-6xl">
-              Frontend, Backend,
+            <h2 className="mt-3 text-4xl leading-[1.15] tracking-tight text-balance sm:mt-4 sm:text-6xl">
+              Booking, payments, logistics.
             </h2>
 
-            <h2 className="mt-3 text-4xl leading-[1.2] tracking-tight sm:mt-4 sm:text-6xl">Mobile app.</h2>
-
-            <Link
-              href={ROUTES.work}
-              className="group mt-8 inline-flex items-center gap-2 font-mono text-xs tracking-wider text-muted-foreground uppercase transition-colors hover:text-foreground">
-              See my work
-              <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-1" aria-hidden="true" />
-            </Link>
+            <h2 className="mt-3 text-4xl leading-[1.15] tracking-tight sm:mt-4 sm:text-6xl">
+              Web, mobile, full-stack.
+            </h2>
           </div>
         </div>
       </div>

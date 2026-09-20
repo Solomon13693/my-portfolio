@@ -1,5 +1,5 @@
-import { Code2, MapPin, Clock, Phone, Mail } from 'lucide-react'
-import { BioRow, LiveClock } from '@/components/reusable'
+import { Code2, MapPin, Clock, Phone, Mail, Download } from 'lucide-react'
+import { BioRow, LiveClock, DownloadResumeLink } from '@/components/reusable'
 import { PROFILE } from '@/data'
 import { SiGithub } from 'react-icons/si'
 import { FaLinkedin } from 'react-icons/fa6'
@@ -48,6 +48,10 @@ export function Overview() {
           <a className="hover:text-foreground" target="_blank" rel="noopener noreferrer" href={PROFILE.github}>
             GitHub
           </a>
+        </BioRow>
+
+        <BioRow icon={<Download />}>
+          <DownloadResumeLink showIcon={false} />
         </BioRow>
 
       </div>

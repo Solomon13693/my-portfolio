@@ -3,9 +3,9 @@ import { PageHeader } from '@/components/sections'
 export function Intro() {
   return (
     <PageHeader
-      eyebrow="Selected work"
-      title="Work"
-      description="A selection of software I've built across web, mobile, frontend, backend, and APIs."
+      eyebrow="In production"
+      title="Projects"
+      description="Booking, payments, logistics — shipped on web, mobile, and backend."
       sidebarLabels={['Web apps', 'Mobile apps', 'Backend']}
     />
   )

@@ -8,7 +8,7 @@ import { ArrowRight, ChevronDown, CodeXml } from 'lucide-react'
 import { IconTile, TechBadge } from '@/components/reusable'
 import { EXPERIENCE, type ExperienceEmployment, type ExperiencePosition } from '@/data'
 import { ROUTES } from '@/constants'
-import { EASE_OUT } from '@/lib'
+import { EASE_OUT, formatPeriodDuration } from '@/lib'
 import { Reveal } from '../motion'
 
 const EMPLOYMENT_LABEL: Record<ExperienceEmployment, string> = {
@@ -20,6 +20,7 @@ const EMPLOYMENT_LABEL: Record<ExperienceEmployment, string> = {
 function PositionAccordion({ position, showRail }: { position: ExperiencePosition; showRail: boolean }) {
 
   const [open, setOpen] = useState(true)
+  const duration = formatPeriodDuration(position.period)
 
   return (
     <div className="group relative pt-5">
@@ -55,10 +56,10 @@ function PositionAccordion({ position, showRail }: { position: ExperiencePositio
 
           <div className="mt-1 flex flex-wrap items-center gap-x-2 font-mono text-xs text-muted-foreground">
             <span>{position.period}</span>
-            {position.duration && (
+            {duration && (
               <>
                 <span aria-hidden="true">·</span>
-                <span>{position.duration}</span>
+                <span>{duration}</span>
               </>
             )}
             <span aria-hidden="true">·</span>
@@ -152,6 +153,20 @@ export function Experience({ limit }: ExperienceProps) {
                     />
                   ))}
                 </div>
+
+                {entry.relatedProjects && entry.relatedProjects.length > 0 && (
+                  <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1 pl-3 font-mono text-xs text-muted-foreground">
+                    {entry.relatedProjects.map((project) => (
+                      <Link
+                        key={project.slug}
+                        href={`/work/${project.slug}`}
+                        className="transition-colors hover:text-foreground"
+                      >
+                        ↳ {project.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
               </div>
             )
 

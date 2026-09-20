@@ -72,7 +72,7 @@ export default async function OpenGraphImage() {
           }}
         >
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-            <div style={captionStyle}>Software Developer</div>
+            <div style={captionStyle}>Software Engineer</div>
             <div style={captionStyle}>{PROFILE.location}</div>
           </div>
 
