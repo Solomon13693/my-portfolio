@@ -1,6 +1,6 @@
 {
   "version": 3,
-  "updatedAt": "2026-09-19T18:05:00.000Z",
+  "updatedAt": "2026-09-21T12:00:00.000Z",
   "skeletonId": "single-column",
   "templatePresetId": "classic-ink",
   "theme": {
@@ -21,7 +21,7 @@
     "showAccentBar": false
   },
   "profile": {
-    "name": "Adeoye Solomon Oluwatobi",
+    "name": "Solomon Adeoye",
     "headline": "Software Engineer · Web, Mobile & Full-Stack",
     "email": "adeoyesolomon2693@gmail.com",
     "phone": "+234 706 662 5389",
@@ -30,7 +30,7 @@
       {
         "id": "link-linkedin",
         "label": "LinkedIn",
-        "url": "https://www.linkedin.com/in/adeoye-solomon-094650219/"
+        "url": "https://www.linkedin.com/in/adeoye-solomon/"
       },
       {
         "id": "link-github",
@@ -51,7 +51,7 @@
       "layout": "text",
       "visible": true,
       "region": "main",
-      "content": "Software Engineer with 4+ years shipping production web, mobile, and backend systems across fintech, logistics, booking, and merchant platforms. Work spans React / React Native on the client and Node.js, NestJS, and Laravel on the server, including REST APIs, auth, wallets, and payment rails. Have shipped booking and reservation workflows, payment systems, and realtime features used by thousands of active users, and led engineering for a logistics platform through multi-year growth. Take features from requirements through development, testing, and production release."
+      "content": "Software Engineer with 4 years building web, mobile, and backend systems across fintech, logistics, booking, and merchant platforms. Work spans React, React Native, and Next.js on the client and Node.js, NestJS, and Laravel on the server, including REST APIs, authentication, wallets, and payment integrations. Currently build and maintain the customer and vendor React Native apps and web platforms at Klone (3,000+ users); previously led engineering at RUN through rapid multi-year growth. Open to full-stack, frontend, and mobile engineering roles."
     },
     {
       "id": "skills",
@@ -137,11 +137,10 @@
                 "Google Calendar API"
               ],
               "bullets": [
-                "Build and maintain customer and vendor React Native apps (iOS/Android) plus customer, vendor, and admin web apps for booking, payments, ticketing, and scheduling.",
-                "Ship end-to-end reservation flows: search, listings, provider profiles, checkout, account management, and QR-based ticketing.",
+                "Build and maintain the customer and vendor React Native apps (customer app live on the App Store and Google Play) and the customer, vendor, and admin web apps for booking, payments, ticketing, and scheduling.",
+                "Ship end-to-end reservation flows: search, listings, provider profiles, checkout (full payment or reservation deposit), account management, and QR tickets that merchants scan.",
                 "Implement auth, realtime messaging, and push notifications across web and mobile so ops and customers stay in sync.",
-                "Integrate Google Maps, Google Calendar, OneSignal, and Mixpanel for discovery, scheduling, notifications, and product analytics.",
-                "Partner with product and engineering to take features from requirements through testing and production release."
+                "Integrate Google Maps, Google Calendar, OneSignal, and Mixpanel for discovery, scheduling, notifications, and product analytics."
               ]
             }
           ]
@@ -161,8 +160,7 @@
               "bullets": [
                 "Built merchant dashboard and payment UI for transaction tracking, account management, and live payment operations.",
                 "Shipped frontend payment and merchant workflows against REST APIs across the payment infrastructure.",
-                "Improved merchant and partner onboarding with clearer API integration flows and developer-facing documentation.",
-                "Delivered responsive, production-ready interfaces used by merchants managing real payment volume."
+                "Improved merchant and partner onboarding with clearer API integration flows and developer-facing documentation."
               ]
             }
           ]
@@ -197,10 +195,10 @@
                 "Git"
               ],
               "bullets": [
-                "Led engineering across customer, merchant, admin, logistics, and payment systems for the company's core platform.",
-                "Scaled the platform to 150× order volume, 37× customer growth, and 18× rider-network growth (2022–2025), supporting millions of fulfilled orders across two markets.",
+                "Led engineering through rapid growth in order volume, customers, and riders (2022–2025), supporting millions of fulfilled orders across two markets.",
                 "Designed and shipped core logistics: order management, quotations, wallet checkout, rider assignment, and delivery management.",
                 "Implemented realtime rider tracking and communication with Socket.IO, Redis, and Firebase, including GPS location updates.",
+                "Built the merchant dashboard and public business API: HMAC-signed webhooks with BullMQ retries, dead-lettering, and outbox recovery, and wallet debits committed atomically with the order.",
                 "Modernized backends from Laravel toward Node.js/NestJS while building React/Next.js merchant and business dashboards.",
                 "Engineered card and wallet payment flows, REST APIs, auth, and partner integrations including secure webhooks."
               ]
@@ -226,6 +224,19 @@
             }
           ]
         }
+      ]
+    },
+    {
+      "id": "projects",
+      "title": "Selected Projects",
+      "layout": "list",
+      "visible": true,
+      "region": "main",
+      "entries": [
+        { "id": "proj-trovo", "title": "Trovo · trovo.ng", "subtitle": "VTU platform (Next.js, Laravel, Monnify): one wallet across the web app and WhatsApp/Telegram bots.", "meta": "2026", "href": "https://trovo.ng/", "visible": true },
+        { "id": "proj-buddiex", "title": "Buddie-X · buddie-x.com", "subtitle": "Mentorship marketplace (React, Laravel): bookings, wallets, Stripe refunds, Zoom sessions, Pusher chat.", "meta": "2025", "href": "https://www.buddie-x.com/", "visible": true },
+        { "id": "proj-babs", "title": "BABS Auto Logistics · babsautologistics.com", "subtitle": "Vehicle sourcing and shipping site (Next.js) with a multi-product quote flow for the operations team.", "meta": "2026", "href": "https://babsautologistics.com/", "visible": true },
+        { "id": "proj-bl", "title": "BL Practice Hub · blpracticehub.com", "subtitle": "Digital law firm site (Next.js) with Notariza, a document notarization intake flow.", "meta": "2025", "href": "https://blpracticehub.com/", "visible": true }
       ]
     },
     {
@@ -289,20 +300,6 @@
           "title": "PHP Master Class",
           "subtitle": "DEVAHRAY",
           "meta": "2022",
-          "visible": true
-        },
-        {
-          "id": "cert-web",
-          "title": "Web Designing / Web Development",
-          "subtitle": "KYEL HOUSE INTERN PROGRAM",
-          "meta": "2021",
-          "visible": true
-        },
-        {
-          "id": "cert-design",
-          "title": "Graphic Design",
-          "subtitle": "Mentis Design Academy",
-          "meta": "2020",
           "visible": true
         }
       ]

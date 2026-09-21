@@ -16,12 +16,12 @@ export const ABOUT = {
     'TypeScript · React / Next.js · NestJS · Laravel',
   ],
 
-  body: 'Software Engineer with 4+ years shipping production products across React / React Native, Next.js, NestJS, and Laravel, including REST APIs, auth, wallets, and payment rails. Have shipped booking and reservation workflows, payment systems, and realtime features used by thousands of active users, and led engineering for a logistics platform through multi-year growth. Take features from requirements through development, testing, and production release.',
+  body: 'Software Engineer with 4 years shipping production products across React / React Native, Next.js, NestJS, and Laravel, including REST APIs, auth, wallets, and payment rails. Have shipped booking and reservation workflows, payment systems, and realtime features used by thousands of active users, and led engineering for a logistics platform through multi-year growth. Take features from requirements through development, testing, and production release.',
 }
 
 /** Proof stats for About + home. Numbers from `file/resume.html`. */
 export const STATS = [
-  { value: '4+', label: 'years shipping production software' },
+  { value: '4', label: 'years shipping production software' },
   { value: '3k+', label: 'users on Klone booking platforms' },
   { value: '20k+', label: 'merchants & users on Spout Payment' },
   { value: '150×', label: 'order volume growth at RUN / Deliverys' },

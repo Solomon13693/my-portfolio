@@ -1,7 +1,7 @@
 # Solomon Adeoye / Portfolio
 
 Personal portfolio and case-study site for Solomon Adeoye, a software
-developer in Lagos, Nigeria working across React, Next.js, and Laravel.
+engineer in Lagos, Nigeria working across React, Next.js, and Laravel.
 
 Built with the Next.js App Router, Tailwind CSS v4, and a minimal
 black-and-white editorial design system, with GSAP/Framer Motion for

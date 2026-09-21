@@ -1,4 +1,4 @@
-import { Code2, MapPin, Clock, Phone, Mail, Download } from 'lucide-react'
+import { Code2, MapPin, Clock, Phone, Mail, Download, Globe } from 'lucide-react'
 import { BioRow, LiveClock, DownloadResumeLink } from '@/components/reusable'
 import { PROFILE } from '@/data'
 import { SiGithub } from 'react-icons/si'
@@ -13,6 +13,10 @@ export function Overview() {
         <BioRow icon={<Code2 />} fullWidth>
           {PROFILE.role.label} <span aria-label="at">@</span>{' '}
           <span className="font-medium">{PROFILE.role.company}</span>
+        </BioRow>
+
+        <BioRow icon={<Globe />} fullWidth>
+          {PROFILE.availability}
         </BioRow>
 
         <BioRow icon={<MapPin />}>
